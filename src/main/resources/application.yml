@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/webshop
+    username: root
+    password:
+
+
+
+## If default port already in use
+server:
+  port: 8085
+  ## Session timeout
+  servlet:
+    session:
+      timeout:
