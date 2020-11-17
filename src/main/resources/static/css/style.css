@@ -1,0 +1,25 @@
+body{
+    font-size: 14;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    color: #333;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+/* Loader */
+.loader{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+
+.loader .loader-inner{
+    width: 100%;
+    height: 100%;
+    background: url(../assets/loader.gif) center center no-repeat;
+}
