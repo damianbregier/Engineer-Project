@@ -13,7 +13,13 @@
 
         <!--Stylesheets-->
         <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+        <!--For jquery and loader-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!--Bootstrap for navigations-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
         
         
@@ -24,9 +30,59 @@
         ------------------------------------------------------------------------------>
         <div class="loader">
             <div class="loader-inner">
-
             </div>
         </div>
+
+        <!----------------------------------------------------------------------------
+                Navigation
+        ------------------------------------------------------------------------------>
+
+        <!--navbar and navbar-expand-lg are bootstrap classes-->
+        <nav id="navigation" class="navbar navbar-expand-lg">
+            <div class="navbar-images-left"><div id="logo1"><img src="../static/assets/logo.png" /></div>
+            <div id="logo2-mobile"><img src="../static/assets/shopping-cart.png" /></div></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#about">O firmie</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#offer">Oferta</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#courses">Kursy</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#statistics">Statystyki</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#contact">Kontakt</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" >|</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#shop">Sklep</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#shop">Logowanie</a>
+                </li> 
+                <li class="nav-item active">
+                    <a class="nav-link" href="#shop">Rejestracja</a>
+                </li>   
+                </ul>           
+                  </div>
+          
+            </div>
+            
+            <div id="logo2"><a href="" target="_blank"><img src="../static/assets/shopping-cart.png" /></a></div>
+          
+          </nav>
 
 
         <!-----------------------------------------------------------------------------
