@@ -23,3 +23,102 @@ body{
     height: 100%;
     background: url(../assets/loader.gif) center center no-repeat;
 }
+
+/*Navigation*/
+
+#navigation {
+    background-color: #fff;
+    padding: 10px 5px;
+    z-index: 101;
+    width: 100%;
+    box-shadow: 0px 0px 2px black; ;
+  }
+
+  #navigation li {
+    padding: 0 10px;
+  }
+  
+  #navigation li a {
+    color: black;
+  }
+  
+  #navigation li .live {
+    color: rgb(238, 73, 73);
+    font-size: 17px;
+    margin-top: -1px;
+  }
+  
+  #navigation li a:hover {
+    color: #002147;
+  }
+  
+  .navbar-toggler-icon {
+    background: url(/src/main/resources/static/assets/menu-button.png);
+    background-size: 100%;
+  }
+  
+  .fixedNav #navigation {
+    position: fixed;
+    top: 0;
+    height: auto;
+  }
+
+  /*Logos and icons in navigation*/
+  .navbar-images-left {
+    width: 32px;
+    height: 32px;
+  }
+  
+  #logo1 {
+    float: left;
+  }
+  
+  #logo1 img {
+    margin: auto;
+    height: 40px;
+    margin-top: -10px;
+
+  }
+  
+  #logo2 img {
+    height: 40px;
+    margin-top: -20px;
+  }
+  
+  #logo2-mobile {
+    display: none;
+  }
+  
+  #logo2-mobile img {
+    height: 34px;
+  }
+
+  /*Menu and logos on mobile devices*/
+  @media only screen and (max-width: 500px) {
+    .navbar-images-left {
+      height: 20px !important;
+    }
+    #logo1 img {
+      height: 30px !important;
+      margin-top: -30px;
+    }
+    #logo2 img {
+      height: 30px !important;
+      margin-top: -30px;
+    }
+    #logo2-mobile img {
+      height: 30px !important;
+      margin-left: 15px;
+      margin-top: -30px;
+    }
+    #logo2 {
+      display: none;
+    }
+    #logo2-mobile {
+      display: block;
+    }
+    .navbar-images-left {
+      width: calc(100% - 60px);
+      height: 30px;
+    }
+  }
