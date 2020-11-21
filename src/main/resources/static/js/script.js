@@ -1,4 +1,5 @@
 $(window).on("load", function () {
+  AOS.init();
   
     /* Loader control */
     $(".loader .loader-inner").fadeOut(3000, function () {

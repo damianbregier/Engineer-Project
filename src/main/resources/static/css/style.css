@@ -1,10 +1,64 @@
+/* 	#231f20 */
+
+/* General settings*/
 body{
     font-size: 14;
-    font-family: 'Times New Roman', Times, serif;
     letter-spacing: 1px;
     color: #333;
     background-color: rgb(255, 255, 255);
     position: relative;
+}
+
+@media screen and (min-width: 0px) {
+  h2 {
+    font-size: 25px;
+    padding-bottom: 30px;
+    letter-spacing: 0px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  h2 {
+    font-size: 30px;
+    padding-bottom: 30px;
+    letter-spacing: 2px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  h2 {
+    font-size: 40px;
+    padding-bottom: 40px;
+    letter-spacing: 4px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  h2 {
+    font-size: 50px;
+    padding-bottom: 50px;
+    letter-spacing: 5px;
+  }
+}
+
+.row h2 {
+  margin-bottom: 20px;
+}
+
+.row h4 {
+  margin-top: 20px;
+}
+
+.row p {
+  margin-bottom: 50px;
+}
+
+*#special {
+  color: #4cb8ea;
+}
+
+.col-md-3 {
+  min-height: 220px;
 }
 
 /* Loader */
@@ -94,7 +148,7 @@ body{
   }
 
   /*Menu and logos on mobile devices*/
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
     .navbar-images-left {
       height: 20px !important;
     }
@@ -199,3 +253,41 @@ background a bit darker*/
       font-size: 25px;
     }
   }
+
+  /*About me section*/
+.section {
+  padding: 100px 0 100px 0;
+}
+
+.aboutImage {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+
+/*Offer section*/
+@media screen and (max-width: 600px) {
+  .offerSection,
+  .contactSection {
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #231f20;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23002147' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .offerSection,
+  .contactSection {
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #231f20;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23002147' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
