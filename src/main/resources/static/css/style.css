@@ -122,3 +122,80 @@ body{
       height: 30px;
     }
   }
+
+/*Title part of slider*/
+.titleMessage {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  top: 50%;
+  z-index: 5;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.titleMessage .heading p {
+  color: #fff;
+  text-shadow: 0px 2px 30px rgba(0, 0, 0, 0.5);
+  font-weight: 100;
+  letter-spacing: 7px;
+}
+
+  /*Makes white elements way more visible by making
+background a bit darker*/
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+  /*Poprzednia wartość opacity to: 0.267*/
+  background-color: rgba(0, 0, 0, 0.32);
+}
+
+.slides-navigation {
+  z-index: 6;
+}
+
+/*Style applied to both navigation arrows*/
+.slides-navigation .prev,
+.slides-navigation .next {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+  /*a.next is more detailed and allow to overwrite css in bootstrap*/
+  .slides-navigation a.prev {
+    left: 0px;
+    background-image: url("../assets/previous.png");
+  }
+  
+  .slides-navigation a.next {
+    right: 0px;
+    background-image: url("../assets/next.png");
+  }
+
+  @media screen and (max-width: 600px) {
+    .titleMessage .heading .main {
+      font-size: 5vw;
+    }
+  }
+  
+  @media screen and (min-width: 601px) {
+    .titleMessage .heading .main {
+      font-size: 65px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .titleMessage .heading .sub {
+      font-size: 3vw;
+    }
+  }
+  
+  @media screen and (min-width: 601px) {
+    .titleMessage .heading .sub {
+      font-size: 25px;
+    }
+  }

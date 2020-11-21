@@ -35,3 +35,26 @@ $(window).on("load", function () {
       body.removeClass("fixedNav");
     }
   }
+
+//Read this function when document (page) is ready
+$(document).ready(function () {
+  //Activates superslide
+  $("#slides").superslides({
+    animation: "fade",
+    play: 7000,
+    pagination: false,
+  });
+
+  //Activate typing of title elements
+  var typed = new Typed(".typed", {
+    strings: [
+      "Kursy internetowe",
+      "Usługi dla biznesu",
+      "Teraz także w abonamencie",
+    ],
+    typeSpeed: 70,
+    loop: true,
+    startDelay: 1000,
+    showCursor: false,
+  });
+});
