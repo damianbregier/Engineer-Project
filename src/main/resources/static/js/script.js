@@ -2,8 +2,8 @@ $(window).on("load", function () {
   AOS.init();
   
     /* Loader control */
-    $(".loader .loader-inner").fadeOut(3000, function () {
-      $(".loader").fadeOut(1000);
+    $(".loader .loader-inner").fadeOut(500, function () {
+      $(".loader").fadeOut(500);
     });
   
   });
@@ -65,7 +65,7 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
 
-        if (!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
+        if (!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 50) {
             $(".counter").each(function () {
                 var element = $(this);
                 var endVal = parseInt(element.text());

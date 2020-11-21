@@ -123,7 +123,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 		if (ensureNumber(self.startVal) && ensureNumber(self.endVal)) {
 			self.decimals = Math.max(0, decimals || 0);
 			self.dec = Math.pow(10, self.decimals);
-			self.duration = Number(duration) * 1000 || 2000;
+			self.duration = Number(duration) * 5000 || 2000;
 			self.countDown = (self.startVal > self.endVal);
 			self.frameVal = self.startVal;
 			self.initialized = true;
