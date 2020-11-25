@@ -4,9 +4,9 @@
 body{
     font-size: 14;
     letter-spacing: 1px;
-    color: #333;
     background-color: rgb(255, 255, 255);
     position: relative;
+    margin-bottom: -700px;
 }
 
 @media screen and (min-width: 0px) {
@@ -53,9 +53,6 @@ body{
   margin-bottom: 50px;
 }
 
-*#special {
-  color: #4cb8ea;
-}
 
 .col-md-3 {
   min-height: 220px;
@@ -82,28 +79,30 @@ body{
 
 #navigation {
     background-color: #fff;
-    padding: 10px 5px;
+    /*Originally padding was 10px 5px*/
+    padding: 0px 5px;
     z-index: 101;
     width: 100%;
-    box-shadow: 0px 0px 2px black; ;
+    box-shadow: 0px 0px 2px black;
+
   }
 
   #navigation li {
-    padding: 0 10px;
+    padding: 0px 10px;
+    display: inline-block;
+    padding: 10px;
   }
   
   #navigation li a {
-    color: black;
+    color: #231f20;
   }
-  
-  #navigation li .live {
-    color: rgb(238, 73, 73);
-    font-size: 17px;
-    margin-top: -1px;
-  }
-  
+
   #navigation li a:hover {
-    color: #002147;
+    color: white;
+  }
+  
+  #navigation li:hover {
+    background-color: #231f20;
   }
   
   .navbar-toggler-icon {
@@ -121,6 +120,7 @@ body{
   .navbar-images-left {
     width: 32px;
     height: 32px;
+    margin-right: 15px ;
   }
   
   #logo1 {
@@ -148,32 +148,31 @@ body{
   }
 
   /*Menu and logos on mobile devices*/
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 990px) {
     .navbar-images-left {
-      height: 20px !important;
+      width: calc(100% - 60px);
+      height: 30px;
+      margin-right: 0px;
     }
+
     #logo1 img {
       height: 30px !important;
-      margin-top: -30px;
+      margin-top: 0px;
     }
     #logo2 img {
       height: 30px !important;
-      margin-top: -30px;
+      margin-top: -10px;
     }
     #logo2-mobile img {
       height: 30px !important;
       margin-left: 15px;
-      margin-top: -30px;
+      margin-top: 0px;
     }
     #logo2 {
       display: none;
     }
     #logo2-mobile {
       display: block;
-    }
-    .navbar-images-left {
-      width: calc(100% - 60px);
-      height: 30px;
     }
   }
 
@@ -289,6 +288,17 @@ background a bit darker*/
     background-color: #231f20;
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23002147' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
   }
+}
+
+.copyrightSection{
+  color: #fff;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  background-color: #231f20;
+  margin-bottom: -100px;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23002147' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .courses {
