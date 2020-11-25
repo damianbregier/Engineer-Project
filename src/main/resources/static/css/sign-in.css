@@ -1,0 +1,7 @@
+/* General settings*/
+body{
+    font-size: 14;
+    letter-spacing: 1px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
