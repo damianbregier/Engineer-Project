@@ -494,3 +494,20 @@ background a bit darker*/
   position: relative;
   display: inline-block;
 }
+
+/*Contact section*/
+.contactButton {
+  color:#231f20;
+  padding: 15px 50px;
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid #231f20;
+  border-radius: 2px;
+  margin-bottom: 30px;
+}
+
+.contactButton:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #231f20;
+}
