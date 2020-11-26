@@ -98,3 +98,14 @@ $(document).ready(function () {
 
     return false;
   });
+
+  function changePage(event) {
+    if($(event.target).hasClass('external')) {
+        window.location.href = $(event.target).attr('href');
+        return;
+    }
+}
+$(function () {
+    $('.navbar-nav li').click( changePage );
+});
+
