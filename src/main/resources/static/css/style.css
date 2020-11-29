@@ -184,7 +184,10 @@ body{
     #logo2-mobile {
       display: block;
     }
-
+    .menu-separator{
+      display: none;
+    }
+  
   }
 
   @media only screen and (max-width: 1000px) {
