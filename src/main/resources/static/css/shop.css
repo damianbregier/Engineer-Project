@@ -135,7 +135,7 @@ body{
   
   #logo2 img {
     height: 40px;
-    margin-top: -20px;
+    margin-top: 0px;
   }
   
   #logo2-mobile {
@@ -160,7 +160,7 @@ body{
     }
     #logo2 img {
       height: 30px !important;
-      margin-top: -10px;
+      margin-top: -15px;
     }
     #logo2-mobile img {
       height: 30px !important;
@@ -179,11 +179,17 @@ body{
   
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 770px) {
     #navigation li a {
       padding-left: 2px;
       padding-right: 2px;
-      font-size: 13px;
+      font-size: 16px;
+    }
+
+    .nav-link{
+      font-size: 14px;
+      padding-left: 2px;
+      padding-right: 2px;
     }
 
   }

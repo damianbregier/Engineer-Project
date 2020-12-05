@@ -140,13 +140,15 @@ body{
   #logo1 img {
     margin: auto;
     height: 40px;
-    margin-top: -10px;
+    margin-top: 0px;
 
   }
   
   #logo2 img {
-    height: 40px;
-    margin-top: -20px;
+    height: 30px;
+    margin-top: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
   
   #logo2-mobile {
