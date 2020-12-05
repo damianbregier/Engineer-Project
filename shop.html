@@ -20,7 +20,10 @@
         <link rel="stylesheet" href="src/main/resources/static/css/shop.css" class="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="background">
+        <div>
+          <!--------------------------------------------------------------------------------
+                    Main navgation
+          ---------------------------------------------------------------------------------->
           <nav id="navigation" class="navbar navbar-expand-md">
             <div class="navbar-images-left"><div id="logo1"><img src="src/main/resources/static/assets/logo.png" /></div>
             <div id="logo2-mobile"><img src="src/main/resources/static/assets/shopping-cart.png" /></div></div>
@@ -55,6 +58,9 @@
             </div>
           </nav>
 
+          <!---------------------------------------------------------------------
+              Smaller slider
+          ------------------------------------------------------------------------>
           <div id="slides">
             <div class="overlay"></div>
             <div class="slides-container">
@@ -63,48 +69,131 @@
               <img src="src/main/resources/static/assets/slide3.jpg" alt="">
               <img src="src/main/resources/static/assets/slide4.jpg" alt="">
             </div>
-            <div class="titleMessage">
-              <div class="heading">
-                <p class="main">Efektywny Rozwój</p>
-                <!--Subs text is given in JS file as part of the function-->
-                <p class="sub typed"></p>
-        
+          </div>
+
+          <!-------------------------------------------------------------------------------------
+              Tab navigation with categiroes
+          -------------------------------------------------------------------------------------->
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-courses-tab" data-toggle="tab" href="#nav-courses" role="tab" aria-controls="nav-courses" aria-selected="true">Kursy</a>
+              <a class="nav-item nav-link" id="nav-ebooks-tab" data-toggle="tab" href="#nav-ebooks" role="tab" aria-controls="nav-ebooks" aria-selected="false">Ebooki</a>
+              <a class="nav-item nav-link" id="nav-training-tab" data-toggle="tab" href="#nav-training" role="tab" aria-controls="nav-training" aria-selected="false">Szkolenia</a>
+              <a class="nav-item nav-link" id="nav-work-tab" data-toggle="tab" href="#nav-work" role="tab" aria-controls="nav-work" aria-selected="false">Warsztaty</a>
+              
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-courses" role="tabpanel" aria-labelledby="nav-courses-tab">
+              <div class="col-md-12 text-center">
+                <h2>Oferta Kursów</h2>
+              </div>
+              <div class="container">
+                <div class="row">
+                </div>
+      
+                <div class="courses">
+                  <div class="course-item">
+                    <i class="fas fa-briefcase fa-2x"></i>
+                    <span class="course-title">Analiza matematyczna</span>
+                    <p class="course-description">Modele matematyczne i statystyczne</p>
+                    <p class="course-description-hidden">Dowiedz się więcej!</p>
+                  </div>
+      
+                  <div class="course-item">
+                    <i class="fas fa-database fa-2x"></i>
+                    <span class="course-title">Big data</span>
+                    <p class="course-description">Zaawansowana analiza danych.</p>
+                    <p class="course-description-hidden">Dowiedz się więcej!</p>
+                  </div>
+      
+                  <div class="course-item">
+                    <i class="fas fa-bug fa-2x"></i>
+                    <span class="course-title">Testowanie oprogramowania</span>
+                    <p class="course-description">Testy z wykorzystaniem najnowszych narzędzi.</p>
+                    <p class="course-description-hidden">Dowiedz się więcej!</p>
+                  </div>
+                  
+  
+                </div>
               </div>
             </div>
+
+            <div class="tab-pane fade" id="nav-ebooks" role="tabpanel" aria-labelledby="nav-ebooks-tab">
+              <div class="col-md-12 text-center">
+                <h2>Oferta Ebooków</h2>
+
+              </div>
+              <div class="container">
+                <div class="row">
+                </div>
+      
+                <div class="courses">
+      
+                    <div class="course-item">
+                      <i class="fas fa-cloud-upload-alt fa-2x"></i>
+                      <span class="course-title">Chmura obliczeniowa</span>
+                      <p class="course-description">Dostępność, wygoda oraz niezawodność.</p>
+                      <p class="course-description-hidden">Dowiedz się więcej!</p>
+                    </div>
         
-            <nav class="slides-navigation">
-              <a href="#" class="next"></a>
-              <a href="#" class="prev"></a>
-            </nav>
+                    <div class="course-item">
+                      <i class="fas fa-code fa-2x"></i>
+                      <span class="course-title">Języki programowania</span>
+                      <p class="course-description">Wszystkie najważniejsze języki i technologie.</p>
+                      <p class="course-description-hidden">Dowiedz się więcej!</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="nav-training" role="tabpanel" aria-labelledby="nav-training-tab">
+              <div class="col-md-12 text-center">
+                <h2>Oferta Szkoleniowa</h2>
+
+              </div>
+              <div class="container">
+                <div class="row">
+                </div>
+      
+                <div class="courses">
+      
+                  <div class="course-item">
+                    <i class="fas fa-database fa-2x"></i>
+                    <span class="course-title">Big data</span>
+                    <p class="course-description">Zaawansowana analiza danych.</p>
+                    <p class="course-description-hidden">Dowiedz się więcej!</p>
+                  </div>
         
+                    <div class="course-item">
+                      <i class="fas fa-code fa-2x"></i>
+                      <span class="course-title">Języki programowania</span>
+                      <p class="course-description">Wszystkie najważniejsze języki i technologie.</p>
+                      <p class="course-description-hidden">Dowiedz się więcej!</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+            
+            <div class="tab-pane fade" id="nav-work" role="tabpanel" aria-labelledby="nav-work-tab">
+              <div class="col-md-12 text-center">
+                <h2>Oferta Warsztatów</h2>
+
+              </div>
+              <div class="container">
+                <div class="row">
+                </div>
+      
+                <div class="courses">
+      
+                </div>
+            </div>
+            </div>
+
           </div>
           
 
-        <div class="navigation tag-menu">
-          <ul class="nav nav-tabs ul2">
-            <li class="active"><a data-toggle="tab" href="#home">Ebooki</a></li>
-            <li><a data-toggle="tab" href="#menu1">Kursy</a></li>
-            <li><a data-toggle="tab" href="#menu2">Szkolenia</a></li>
-            <li><a data-toggle="tab" href="#menu2">Warsztaty</a></li>      
-          </ul>
-          
-          <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-              <h3>HOME</h3>
-              <p>Some content.</p>
-            </div>
-            <div id="menu1" class="tab-pane fade">
-              <h3>Menu 1</h3>
-              <p>Some content in menu 1.</p>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-              <h3>Menu 2</h3>
-              <p>Some content in menu 2.</p>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Some content in menu 2.</p>
-            </div>
               
           </div>
           </div>
