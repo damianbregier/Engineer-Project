@@ -194,16 +194,22 @@ body{
 
   #slides{
       margin-top: -20px;
-      height: 60vh!important;
+      height: 80vh!important;
       
   }
 
   .slides-container{
-    height: 70vh !important;
+    height: 80vh !important;
+
   }
 
     /*Makes white elements way more visible by making
   background a bit darker*/
+
+  #img{
+    width: 100%;
+    height: auto;
+  }
   .overlay {
     width: 100%;
     height: 100%;
