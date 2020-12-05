@@ -2,8 +2,8 @@ $(window).on("load", function () {
   AOS.init();
   
     /* Loader control */
-    $(".loader .loader-inner").fadeOut(500, function () {
-      $(".loader").fadeOut(500);
+    $(".loader .loader-inner").fadeOut(200, function () {
+      $(".loader").fadeOut(200);
     });
   
   });
