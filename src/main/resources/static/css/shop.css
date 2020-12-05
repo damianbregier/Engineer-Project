@@ -215,6 +215,7 @@ body{
   margin-top: -30px;
   display: flex;
   justify-content: space-around;
+  background-color: white;
 }
 
 @media screen and (max-width: 600px) {
@@ -223,11 +224,45 @@ body{
   }
 }
 
-.tab-content{
-  background-color: white;
-  height: 100vh;
+.nav-tabs{
+  color: #231f20;
+  border: none;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
 }
 
+.nav-tabs .active{
+  border: none;
+  border-bottom: 5px solid #231f20 !important;
+  
+}
+
+.nav-item{
+  color: #231f20;
+}
+
+.nav-item:hover{
+  color: #231f20;
+  border: none;
+}
+
+.nav-link{
+  
+}
+
+
+
+.tab-content{
+  background-color: white;
+  display: flexbox;
+  padding-top: 100px;
+  padding-bottom: 100px
+
+}
+
+
+/*Grid system for tabs*/
 .courses {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
