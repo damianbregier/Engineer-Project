@@ -138,6 +138,11 @@
     width: 30px;
   }
 
+  .container{
+    display: flexbox;
+    min-height: 68vh;
+  }
+
 
   /*About me section*/
   .section {
@@ -241,4 +246,17 @@
     padding: 20px;
     background-image: none;
   }
+
+  .divider{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    height: 150px;
+    background-image: url(/src/main/resources/static/assets/divider1.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 200%;
+    background-size: cover;
+  }
+
+  
   
