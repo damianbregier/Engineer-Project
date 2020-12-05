@@ -176,6 +176,10 @@ body{
 
   }
 
+  .menu-button{
+    width: 30px;
+  }
+
   #slides{
       height: 60vh!important;
       
