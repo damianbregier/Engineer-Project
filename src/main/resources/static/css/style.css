@@ -199,6 +199,10 @@ body{
 
   }
 
+  .menu-button{
+    width: 30px;
+  }
+
 /*Title part of slider*/
 .titleMessage {
   position: absolute;
