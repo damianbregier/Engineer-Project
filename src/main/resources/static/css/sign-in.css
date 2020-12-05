@@ -48,6 +48,16 @@ body{
 }
 
 
+
+.menu-logo{
+    width: 30%;
+    margin-top: -30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 li{
     width: 50%;
     text-align: center ;
