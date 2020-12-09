@@ -4,6 +4,10 @@ spring:
     url: jdbc:mysql://localhost:3316/webshop
     username: root
     password:
+    initialization-mode: never
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 
 
