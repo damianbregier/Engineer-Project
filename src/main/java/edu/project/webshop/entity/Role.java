@@ -1,7 +1,12 @@
 package edu.project.webshop.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@Data //getter, setter, RequiredArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="role")
 public class Role {
@@ -14,36 +19,5 @@ public class Role {
     @OneToOne(mappedBy = "role")
     private User user;
 
-    public Role() {
-    }
 
-    public Role(int id, String name, User user) {
-        this.id = id;
-        this.name = name;
-        this.user = user;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }
