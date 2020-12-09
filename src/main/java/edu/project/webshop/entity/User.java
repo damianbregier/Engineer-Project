@@ -1,16 +1,18 @@
 package edu.project.webshop.entity;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 
-@Data //getter, setter, RequiredArgsConstructor
-@NoArgsConstructor
 
+@NoArgsConstructor
 @Entity
 @Table(name = "user")
+@Data
 public class User {
 
     @Id
@@ -28,7 +30,5 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id")
     private Role role;
-
-
 
 }
