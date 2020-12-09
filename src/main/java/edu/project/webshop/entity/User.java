@@ -7,10 +7,13 @@ import lombok.Setter;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 @Table(name = "user")
 @Data
 public class User {
@@ -30,5 +33,9 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id")
     private Role role;
+
+
+
+
 
 }
