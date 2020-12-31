@@ -4,7 +4,7 @@ spring:
     url: jdbc:mysql://localhost:3316/webshop
     username: root
     password:
-    initialization-mode: never
+    initialization-mode: always
   jpa:
     hibernate:
       ddl-auto: update
@@ -13,7 +13,7 @@ spring:
 
 ## If default port already in use
 server:
-  port: 8085
+  port: 8088
   ## Session timeout
   servlet:
     session:
