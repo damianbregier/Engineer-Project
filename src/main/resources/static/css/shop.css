@@ -358,6 +358,15 @@ body{
   background-image: none;
 }
 
+.homepageButton {
+  border: none;
+  background-color: white;
+  position: relative;
+  display: block;
+  margin-right: 3px;
+
+}
+
 
 
 
