@@ -102,6 +102,20 @@ input[type=email], input[type=password] {
   input[type=submit]:hover {
     background-color: #231f20;
   }
+
+  button {
+      border: none !important;
+      background-color: white;
+      position: relative;
+      display: block;
+      padding: 10px 30px;
+      margin-right: 2px;
+
+  }
+
+  button:hover{
+      background-color: #eee
+  }
   
 
 

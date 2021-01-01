@@ -28,35 +28,27 @@
         <div class="logo-container"><img class="menu-logo" th:src="@{/assets/logo.png}" /></div>
 
         <ul class="nav nav-tabs">
-            <li class="nav-item active">
-                <a class="nav-link" data-toggle="tab" href="#login">Log!!!!!!!!</a>
-            </li>
             <li class="nav-item">
+                <form th:action="@{/login}" method="get">
+                    <button class="nav-link" type="Submit">Logowanie</button>
+                </form>
+            </li>
+            <li class="nav-item active">
                 <a class="nav-link" data-toggle="tab" href="#register">Rejestracja</a>
             </li>
         </ul>
 
         <div class="tab-content">
-            <div id="login" class="tab-pane fade in active">
-                <form>
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Podaj e-mail">
-
-                    <label for="password">Hasło</label>
-                    <input type="password" id="password" name="password" placeholder="Podaj hasło">
-                    <input type="submit" value="Zaloguj się">
-                </form>
-            </div>
-            <div id="register" class="tab-pane fade">
+            <div id="register" class="tab-pane active">
                 <form th:action="@{/register}"
                       th:object="${user}" method="post" class="form-horizontal"
                       role="form">
                     <label for="login">E-mail</label>
-                    <input type="email" id="email" th:field="*{email}" placeholder="Podaj e-mail">
+                    <input type="email" id="login" th:field="*{email}" placeholder="Podaj e-mail">
 
                     <label for="password"
                            class="validation-message">Hasło</label>
-                    <input type="password" id="passowrd" th:field="*{password}" placeholder="Podaj hasło">
+                    <input type="password" id="password" th:field="*{password}" placeholder="Podaj hasło">
 
                     <input type="submit" value="Zarejestruj się">
                 </form>
