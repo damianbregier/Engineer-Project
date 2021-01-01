@@ -29,7 +29,7 @@
 
         <ul class="nav nav-tabs">
             <li class="nav-item active">
-                <a class="nav-link" data-toggle="tab" href="#login">Logowanie</a>
+                <a class="nav-link" data-toggle="tab" href="#login">Log!!!!!!!!</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#register">Rejestracja</a>
@@ -48,13 +48,15 @@
                 </form>
             </div>
             <div id="register" class="tab-pane fade">
-                <form>
+                <form th:action="@{/register}"
+                      th:object="${user}" method="post" class="form-horizontal"
+                      role="form">
                     <label for="login">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Podaj e-mail">
+                    <input type="email" id="email" th:field="*{email}" placeholder="Podaj e-mail">
 
                     <label for="password"
                            class="validation-message">Hasło</label>
-                    <input type="password" id="passowrd" name="password" placeholder="Podaj hasło">
+                    <input type="password" id="passowrd" th:field="*{password}" placeholder="Podaj hasło">
 
                     <input type="submit" value="Zarejestruj się">
                 </form>
