@@ -43,8 +43,21 @@ xmlns:th="http://www.thymeleaf.org">
 
         <!--navbar and navbar-expand-lg are bootstrap classes-->
         <nav id="navigation" class="navbar navbar-expand-md">
-            <div class="navbar-images-left"><div id="logo1"><img th:src="@{/assets/logo.png}" /></div>
-            <div id="logo2-mobile"><img th:src="@{/assets/bag.png}" /></div></div>
+            <div class="navbar-images-left"><div id="logo1">
+              <form th:action="@{/}" method="get">
+                <button class="homepageButton" type="Submit">
+                <img th:src="@{/assets/logo.png}" />
+              </button>
+              </form>
+            </div>
+            <div id="logo2-mobile">
+              <form th:action="@{/shop}" method="get">
+                <button class="homepageButton" type="Submit">
+                  <img th:src="@{/assets/bag.png}" />
+                </button>
+              </form>
+            </div>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><img class="menu-button" th:src="@{/assets/menu-button.png}"/></span>

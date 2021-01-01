@@ -23,13 +23,12 @@ public class User {
     private int id;
 
     @Column (unique = true)
-    @Email(message = "*Please provide a valid Email")
-    @NotEmpty(message = "*Please provide an email")
+    @NotEmpty(message = "*Pole e-mail nie może być puste!")
     private String email;
 
     @Column(unique = true)
-    @Length(min = 5, message = "*Your password must have at least 5 characters")
-    @NotEmpty(message = "*Please provide your password")
+    @Length(min = 5, message = "*Hasło musi zawierać conajmniej 5 znaków!")
+    @NotEmpty(message = "*Pole hasło nie może być puste!")
     private String password;
 
     @Column(name = "name")

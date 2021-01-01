@@ -2,7 +2,7 @@
 
 /* General settings*/
 body{
-    font-size: 14;
+    font-size: 14px;
     letter-spacing: 1px;
     background-color: rgb(255, 255, 255);
     position: relative;
@@ -12,7 +12,7 @@ body{
   h2 {
     font-size: 25px;
     padding-bottom: 30px;
-    letter-spacing: 0px;
+    letter-spacing: 0;
   }
 }
 
@@ -63,8 +63,8 @@ body{
     height: 100%;
     background-color: rgb(255, 255, 255);
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     z-index: 1000;
 }
 
@@ -79,10 +79,10 @@ body{
 #navigation {
     background-color: #fff;
     /*Originally padding was 10px 5px*/
-    padding: 0px 5px;
+    padding: 0 5px;
     z-index: 101;
     width: 100%;
-    box-shadow: 0px 0px 2px black;
+    box-shadow: 0 0px 2px black;
     font-weight: 600;
     border-bottom: 5px solid #231f20;
 
@@ -116,7 +116,7 @@ body{
 
   
   .navbar-toggler-icon {
-    background: url(/src/main/resources/static/assets/menu-button.png);
+    background: url("/src/main/resources/static/assets/menu-button.png");
     background-size: 100%;
   }
   
@@ -158,6 +158,16 @@ body{
   #logo2-mobile img {
     height: 34px;
   }
+
+.homepageButton {
+  border: none;
+  background-color: white;
+  position: relative;
+  display: block;
+  margin-right: 3px;
+
+
+}
 
   /*Menu and logos on mobile devices*/
   @media only screen and (max-width: 820px) {
@@ -392,7 +402,6 @@ background a bit darker*/
   color: #231f20;
   padding: 20px;
   background-color: #fff;
-  padding: 20px;
   background-image: none;
 }
 
@@ -414,17 +423,17 @@ background a bit darker*/
 .squareInnerContainer:after {
   content: "";
   position: absolute;
-  top: 0px;
+  top: 0;
   width: 30%;
   border-bottom: 2px solid #231f20;
 }
 
 .squareInnerContainer:before {
-  right: 0px;
+  right: 0;
 }
 
 .squareInnerContainer:after {
-  left: 0px;
+  left: 0;
 }
 
 .squareContent h2 {
@@ -549,4 +558,10 @@ background a bit darker*/
   text-decoration: none;
   color: #fff;
   background-color: #231f20;
+}
+
+.text-success{
+  font-size: 16px;
+  color: darkgreen;
+
 }

@@ -49,7 +49,7 @@
                         <input type="password" id="user-password-input" name="user-password-input" placeholder="Podaj hasło">
                     </label>
                     <div align="center" th:if="${param.error}">
-                        <p style="font-size: 20; color: #ff1c19;">User Name or Password invalid, please verify</p>
+                        <p class="error">E-mail lub hasło są nieprawidłowe, spróbuj jeszcze raz!</p>
                     </div>
                     <input type="submit" value="Zaloguj się">
                 </form>

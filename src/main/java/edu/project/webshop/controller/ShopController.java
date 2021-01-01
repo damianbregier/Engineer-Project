@@ -8,9 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class ShopController {
 
     @GetMapping(value = "/shop")
-    public ModelAndView index(){
+    public ModelAndView shop(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("shop.html");
+        modelAndView.setViewName("shop");
         return modelAndView;
     }
 }
