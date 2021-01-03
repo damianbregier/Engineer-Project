@@ -34,7 +34,7 @@ public class ShopController {
         }
         model.addAttribute("log_user_role", log_user_role);
 
-        return "shop";
+        return "/shop";
     }
 
 }

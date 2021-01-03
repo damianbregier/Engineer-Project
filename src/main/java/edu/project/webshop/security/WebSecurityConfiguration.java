@@ -38,10 +38,14 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .antMatchers("/").permitAll()
                     .antMatchers("/login").permitAll()
                     .antMatchers("/register").permitAll()
+
                     .antMatchers("/profile").hasAuthority("USER")
+
                     .antMatchers("/usersView").hasAuthority("ADMIN")
                     .antMatchers("/new_user").hasAuthority("ADMIN")
                     .antMatchers("/update_user").hasAuthority("ADMIN")
+
+
                     .anyRequest().authenticated().and().csrf().disable()
                 .formLogin()
                     .loginPage("/login")

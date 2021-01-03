@@ -3,7 +3,11 @@ package edu.project.webshop.controller;
 import edu.project.webshop.entity.User;
 import edu.project.webshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,13 +21,22 @@ public class SignUpController {
     @Autowired
     private UserService userService;
 
+
+
     @GetMapping(value="/register")
     public ModelAndView register(){
         ModelAndView modelAndView = new ModelAndView();
         User user = new User();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         modelAndView.addObject("user", user);
         modelAndView.setViewName("sign-up");
-        return modelAndView;
+
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return modelAndView;
+        }else{
+            modelAndView.setViewName("redirect:/shop");
+            return modelAndView;
+        }
     }
 
     @PostMapping(value = "/register")
