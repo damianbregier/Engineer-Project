@@ -51,9 +51,14 @@
                 </li>
               </ul>
               <ul class="navbar-nav justify-content-right">
-                <li class="nav-item active">
-                  <a class="nav-link external" th:href="@{/profile}">Panel użytkownika</a>
-              </li>
+                <span th:switch="${log_user_role}">
+                    <li th:case="'USER'" class="nav-item active">
+                      <a class="nav-link external" th:href="@{/profile}">Panel użytkownika</a>
+                    </li>
+                    <li th:case="'ADMIN'" class="nav-item active">
+                      <a class="nav-link external" th:href="@{/usersView}">Panel administratora</a>
+                    </li>
+                </span>
                 <li class="nav-item active">
                   <a class="nav-link" href="#courses">Moje kursy</a>
                 </li>
