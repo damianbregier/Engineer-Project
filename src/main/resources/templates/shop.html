@@ -29,7 +29,7 @@
           <nav id="navigation" class="navbar navbar-expand-md">
             <div class="navbar-images-left">
               <div id="logo1">
-                <form th:action="@{/logout}" method="get">
+                <form th:href="@{/shop}" method="get">
                   <button class="homepageButton" type="Submit">
                     <img th:src="@{/assets/logo.png}" />
                   </button>
@@ -43,9 +43,6 @@
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link external" th:href="@{/logout}">Strona główna</a>
-                    </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#offer">Oferta</a>
                 </li>
@@ -264,11 +261,14 @@
                 </div>
             </div>
             </div>
-
           </div>
-          
+          </div>
+          <div class="copyrightSection">
+            <div class="col-md-12 text-center">
+              <p>&copy; Copyright <a href="https://github.com/damianbregier" style="color: white; text-underline-offset: unset;">Damian Bregier</a> 2020</p>
 
-              
+            </div>
+          </div>
           </div>
 
 

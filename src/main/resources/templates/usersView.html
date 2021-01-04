@@ -1,19 +1,78 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl-PL"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Employee Management System</title>
+    <!--About project/keywords-->
+    <title>Efektywny Rozwój S. A. - oficjalny sklep</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <meta name="description" content="Oficjalna strona i sklep internetowy spółki Efektywny Rozwój S.A.">
+    <meta name="keywords" content="Efektywny Rozwój, Grzegorz Kobuszewski, Kursy, Szkolenia, Warsztaty, Ebooki">
+    <meta name="author" content="Damian Bregier">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous">
+    <!--Favicon-->
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin-panel.css}">
 
 </head>
 <body>
+<!--------------------------------------------------------------------------------
+          Main navgation
+---------------------------------------------------------------------------------->
+<nav id="navigation" class="navbar navbar-expand-md">
+    <div class="navbar-images-left">
+        <div id="logo1">
+            <form th:action="@{/shop}" method="get">
+                <button class="homepageButton" type="Submit">
+                    <img th:src="@{/assets/logo.png}" />
+                </button>
+            </form>
+        </div>
+        <div id="logo2-mobile"><img th:src="@{/assets/shopping-caer2.png}" /></div></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><img class="menu-button" th:src="@{/assets/menu-button.png}"/></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active ">
+                <a class="nav-link external" th:href="@{/shop}">Oferta</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav justify-content-right">
+            <li class="nav-item active">
+                <a class="nav-link external" th:href="@{/usersView}">Użytkownicy</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link external" th:href="@{/productsView}">Produkty</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link external" th:href="@{/logout}">Wyloguj</a>
+            </li>
+        </ul>
+    </div>
+    <div id="logo2"><a href="" target="_blank"><img th:src="@{/assets/shopping-caer2.png}" /></a></div>
+    </div>
+</nav>
+
+<!---------------------------------------------------------------------
+    Smaller slider
+------------------------------------------------------------------------>
+<div id="slides">
+    <div class="overlay"></div>
+    <div class="divider">
+
+    </div>
+</div>
 
 <div class="container my-2">
-    <h1>Employees List</h1>
+    <h2>Lista użytkowników</h2>
 
     <a th:href = "@{/showNewUserForm}" class="btn btn-primary btn-sm mb-3"> Add User </a>
 
@@ -26,33 +85,34 @@
             </th>
             <th>
                 <a th:href="@{'/page/' + ${currentPage} + '?sortField=surname&sortDir=' + ${reverseSortDir}}">
-                    Surname</a>
+                    Nazwisko</a>
             </th>
             <th>
                 <a th:href="@{'/page/' + ${currentPage} + '?sortField=name&sortDir=' + ${reverseSortDir}}">
-                    Name</a>
+                    Imię</a>
             </th>
-            <th> Actions </th>
+            <th> Akcje </th>
         </tr>
         </thead>
+
         <tbody>
         <tr th:each="user : ${listUsers}">
             <td th:text="${user.email}"></td>
             <td th:text="${user.surname}"></td>
             <td th:text="${user.name}"></td>
-            <td> <a th:href="@{/showFormForUpdate/{id}(id=${user.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deleteUser/{id}(id=${user.id})}" class="btn btn-danger">Delete</a>
+            <td> <a th:href="@{/showFormForUpdate/{id}(id=${user.id})}" class="btn-primary">Edytuj</a>
+                <a th:href="@{/deleteUser/{id}(id=${user.id})}" class="btn-danger">Usuń</a>
             </td>
         </tr>
         </tbody>
     </table>
 
     <div th:if = "${totalPages > 1}">
-        <div class = "row col-sm-10">
-            <div class = "col-sm-2">
-                Total Rows: [[${totalItems}]]
+        <div class = "row col-sm-12">
+            <div class = "col-sm-4">
+                Liczba wierszy: [[${totalItems}]]
             </div>
-            <div class = "col-sm-1">
+            <div class = "col-sm-6">
 					<span th:each="i: ${#numbers.sequence(1, totalPages)}">
 						<a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
 						<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
@@ -60,15 +120,54 @@
             </div>
             <div class = "col-sm-1">
                 <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
-                <span th:unless="${currentPage < totalPages}">Next</span>
+                <span th:unless="${currentPage < totalPages}">Następna</span>
             </div>
 
             <div class="col-sm-1">
                 <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
-                <span th:unless="${currentPage < totalPages}">Last</span>
+                <span th:unless="${currentPage < totalPages}">Ostatnia</span>
             </div>
         </div>
     </div>
 </div>
+
+
+
+</div>
+
+
+<div class="copyrightSection">
+    <div class="col-md-12 text-center">
+        <p>&copy; Copyright <a href="https://github.com/damianbregier" style="color: white; text-underline-offset: unset;">Damian Bregier</a> 2020</p>
+
+    </div>
+</div>
+
+
+
+
+<!-----------------------------------------------------------------------------
+JS links
+------------------------------------------------------------------------------->
+
+<script th:src="@{/js/jquery.superslides.js}"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script th:src="@{/js/shop.js}"></script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
