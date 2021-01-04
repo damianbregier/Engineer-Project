@@ -342,21 +342,41 @@ xmlns:th="http://www.thymeleaf.org">
   <div id="contact" class="section"  data-aos="zoom-in">
     <div class="col-md-12 text-center">
       <h2>Kontakt</h2>
-      <h4>Jan Kowalski</h4>
       <p>
         obsługa klientów biznesowych <br>
         tel. 22 111 21 34 <br>
         kom. 112 233 445<br>
-        <a href="mailTo:maksgraph.46@gmail.com" class="contactButton">Mail</a><br>
-      </p>
-      <h4>Adam Nowak</h4>
-      <p>
-        pomoc techniczna<br>
-        tel. 22 361 51 01 <br>
-        <a href="mailTo:maksgraph.46@gmail.com" class="contactButton">Mail</a><br>
+        mail: biznes(at)efektywnyrozwoj.pl
       </p>
 
-    
+      <p>
+        pomoc techniczna <br>
+        tel. 23 113 23 34 <br>
+        kom. 112 233 443<br>
+        mail: pomoc(at)efektywnyrozwoj.pl
+      </p>
+
+      <p>Jeżeli masz pytania ogólne dotyczące oferty możesz też skorzystać z naszego formularza.</p>
+      <div class="container">
+        <a href="#demo" class="contactButton" data-toggle="collapse">Napisz do nas!</a>
+        <div id="demo" class="collapse">
+          <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xrgorzvq" method="post">
+            <fieldset id="fs-frm-inputs">
+              <input type="text" name="name" id="full-name" placeholder="Imię i nazwisko" required="">
+              <input type="email" name="_replyto" id="email-address" placeholder="Adres email" required="">
+              <textarea rows="5" name="message" id="message" class="textarea" placeholder="Napisz coś..." required=""></textarea>
+              <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            </fieldset>
+            <input type="submit" value="Wyślij">
+          </form>
+
+        </div>
+      </div>
+
+
+
+
+
     </div>
   </div>
 
@@ -387,6 +407,7 @@ xmlns:th="http://www.thymeleaf.org">
         <script th:src="@{/js/countUp-jquery.js}"></script>
         <script th:src="@{/js/jquery.superslides.js}"></script>
         <script th:src="@{/js/typed.js}"></script>
+        <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
