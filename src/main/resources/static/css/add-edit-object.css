@@ -1,0 +1,131 @@
+/* General settings*/
+body{
+    font-size: 14;
+    letter-spacing: 1px;
+}
+
+.background{
+    background-color: #231f20;
+}
+
+.border{
+    position: absolute;
+    /*To center margin have to -half of width and height*/
+    width: 70%;
+    height: 70%;
+    min-width: 350px;
+    min-height: 650px;
+    max-width: 650px;
+    max-height: 750px;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px black;
+    /*Centering by margin can be automated*/
+    /*Prefix are fallbacks for different browsers*/
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.main-window{
+    position: absolute;
+    /*To center margin have to -half of width and height*/
+    width: 300px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    /*Centering by margin can be automated*/
+    /*Prefix are fallbacks for different browsers*/
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+
+.menu-logo{
+    width: 30%;
+    margin-top: -30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+li{
+    width: 100%;
+    text-align: center ;
+}
+
+.nav>li>a {
+    color: #231f20 !important;
+}
+
+.nav-tabs>li.active>a {
+    border: none !important;
+    border-bottom:4px solid #231f20 !important;
+
+}
+
+.tab-content{
+    padding: 20px;
+
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #231f20;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #231f20;
+}
+
+button {
+    border: none !important;
+    background-color: white;
+    position: relative;
+    display: block;
+    padding: 10px 30px;
+    margin-right: 2px;
+
+}
+
+button:hover{
+    background-color: #eee
+}
+
+.error{
+    font-size: 12px;
+    color: #ff1c19;
+}
+
+.validation-message {
+    font-style: normal;
+    font-size: 12px;
+    color: #FF1C19;
+}
+
+

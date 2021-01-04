@@ -74,10 +74,10 @@
 <div class="container my-2">
     <h2>Lista użytkowników</h2>
 
-    <a th:href = "@{/showNewUserForm}" class="btn btn-primary btn-sm mb-3"> Add User </a>
+    <a th:href = "@{/showNewUserForm}" class="btn btn-primary btn-sm mb-3"> Dodaj użytkownika </a>
 
     <table border="1" class = "table table-striped table-responsive-md">
-        <thead class="head table-dark">
+        <thead class="head">
         <tr>
             <th>
                 <a th:href="@{'/page/' + ${currentPage} + '?sortField=email&sortDir=' + ${reverseSortDir}}" class="table-links">
