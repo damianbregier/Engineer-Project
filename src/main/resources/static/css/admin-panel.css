@@ -236,9 +236,38 @@ background a bit darker*/
 }
 
 .container{
-    margin-bottom: 50vh!important;
+    margin-bottom: 35vh!important;
 
 }
+
+.btn{
+    background-color: white!important;
+    border-color: #231f20!important;
+    color: #231f20!important;
+}
+
+.delete{
+    color: white!important;
+    background-color: #901b18 !important;
+}
+
+.btn:hover{
+    background-color: #231f20!important;
+    border-color: #231f20!important;
+    color: white!important;
+}
+
+.table-links{
+    color: white!important;
+}
+
+.head{
+    background-color: #231f20!important;
+    border-color: #231f20!important;
+}
+
+
+
 
 .copyrightSection{
     color: #fff;
