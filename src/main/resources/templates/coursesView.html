@@ -87,6 +87,10 @@
                 <a th:href="@{'/course_page/' + ${currentPage} + '?sortField=price&sortDir=' + ${reverseSortDir}}" class="table-links">
                     Cena</a>
             </th>
+            <th>
+                <a th:href="@{'/course_page/' + ${currentPage} + '?sortField=tag.name&sortDir=' + ${reverseSortDir}}" class="table-links">
+                    Kategoria</a>
+            </th>
             <th class="table-links"> Akcje </th>
         </tr>
         </thead>
@@ -95,8 +99,8 @@
         <tr th:each="course : ${listCourses}"
             th:object="${course}">
             <td th:text="${course.name}"></td>
-
             <td th:text="${course.price}"></td>
+            <td th:text="${course.tag.name}"></td>
 
             <td>
                 <a th:href="@{/showCourseFormForUpdate/{id}(id=${course.id})}" class="btn btn-primary">Edytuj</a>

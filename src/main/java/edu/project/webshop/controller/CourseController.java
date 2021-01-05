@@ -1,7 +1,10 @@
 package edu.project.webshop.controller;
 
 import edu.project.webshop.entity.Course;
+import edu.project.webshop.entity.Tag;
+import edu.project.webshop.entity.User;
 import edu.project.webshop.service.CourseService;
+import edu.project.webshop.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,9 @@ public class CourseController {
 
     @Autowired
     CourseService courseService;
+
+    @Autowired
+    TagService tagService;
 
     @GetMapping("/course_page/{pageNo}")
     public String findPaginatedCourses(@PathVariable(value = "pageNo") int pageNo,
@@ -41,6 +47,9 @@ public class CourseController {
 
     @GetMapping("/coursesView")
     public String viewHomePage(Model model) {
+        ModelAndView modelAndView = new ModelAndView();
+        List<Tag> listTags = tagService.getAllTags();
+        modelAndView.addObject("listTags", listTags);
 
         return findPaginatedCourses(1,"name", "asc", model);
     }
@@ -48,27 +57,31 @@ public class CourseController {
     @GetMapping(value="/showNewCourseForm")
     public ModelAndView showNewCourseForm(){
         ModelAndView modelAndView = new ModelAndView();
+        List <Tag> listTags = tagService.getAllTags();
         Course course = new Course();
         modelAndView.addObject("course", course);
+        modelAndView.addObject("listTags", listTags);
         modelAndView.setViewName("new_course");
         return modelAndView;
     }
 
-    @PostMapping("/showNewCourseForm")
+    @PostMapping("/updateCourse")
     public String saveCourse(@ModelAttribute("course") Course course) {
         courseService.saveCourse(course);
         return "redirect:/coursesView";
     }
 
     @GetMapping("/showCourseFormForUpdate/{id}")
-    public String showCourseFormForUpdate(@PathVariable ( value = "id") int id, Model model) {
+    public ModelAndView showCourseFormForUpdate(@PathVariable ( value = "id") int id){
 
-        // get employee from the service
+        ModelAndView modelAndView = new ModelAndView();
+        List <Tag> listTags = tagService.getAllTags();
         Course course = courseService.getCourseById(id);
+        modelAndView.addObject("course", course);
+        modelAndView.setViewName("update_course");
+        return modelAndView;
 
-        // set employee as a model attribute to pre-populate the form
-        model.addAttribute("course", course);
-        return "update_course";
+
     }
 
     @GetMapping("/deleteEmployee/{id}")

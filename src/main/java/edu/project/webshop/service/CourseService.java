@@ -4,6 +4,7 @@ import edu.project.webshop.entity.Course;
 import edu.project.webshop.entity.Tag;
 import edu.project.webshop.entity.User;
 import edu.project.webshop.repository.CourseRepository;
+import edu.project.webshop.repository.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,13 +21,13 @@ public class CourseService {
     @Autowired
     CourseRepository courseRepository;
 
+    @Autowired
+    TagRepository tagRepository;
+
     public List<Course> getAllCourses(){
         return courseRepository.findAll();
     }
 
-    public List<Course> getAllCoursesByTag(String name){
-        return (List<Course>) courseRepository.findByTagName(name);
-    }
 
     public Course getCourseById(int id) {
         Optional<Course> optional = courseRepository.findById(id);
@@ -57,4 +58,5 @@ public class CourseService {
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
         return courseRepository.findAll(pageable);
     }
+
 }

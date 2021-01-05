@@ -1,6 +1,7 @@
 package edu.project.webshop.service;
 
 import edu.project.webshop.entity.Role;
+import edu.project.webshop.entity.Tag;
 import edu.project.webshop.entity.User;
 import edu.project.webshop.repository.RoleRepository;
 import edu.project.webshop.repository.UserRepository;
@@ -71,6 +72,7 @@ public class UserService {
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
         return this.userRepository.findAll(pageable);
     }
+
 
 
 

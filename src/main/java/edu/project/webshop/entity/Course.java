@@ -21,7 +21,7 @@ public class Course {
     private String name;
     private String description;
     private String avatar;
-    private String price;
+    private int price;
 
     @ManyToOne
     @JoinColumn(name = "tag_id")
