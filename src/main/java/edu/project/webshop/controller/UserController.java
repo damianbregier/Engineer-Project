@@ -110,6 +110,14 @@ public class UserController {
         return "update_user";
     }
 
+    @PostMapping("/updateUser")
+    public String saveEmployee(@ModelAttribute("user") User user) {
+        // save employee to database
+        userService.saveUser(user);
+        return "redirect:/usersView";
+    }
+
+
     @GetMapping("/deleteUser/{id}")
     public String deleteEmployee(@PathVariable (value = "id") int id) {
 
