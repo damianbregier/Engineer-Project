@@ -96,13 +96,18 @@
         </thead>
 
         <tbody>
-        <tr th:each="user : ${listUsers}">
+        <tr th:each="user : ${listUsers}"
+            th:object="${user}"
+            th:if="${user.id!=1}">
             <td th:text="${user.email}"></td>
             <td th:text="${user.surname}"></td>
+
             <td th:text="${user.name}"></td>
-            <td> <a th:href="@{/showFormForUpdate/{id}(id=${user.id})}" class="btn btn-primary">Edytuj</a>
-                <a th:href="@{/deleteUser/{id}(id=${user.id})}" class="btn delete btn-danger">Usuń</a>
-            </td>
+                <td>
+                    <a th:href="@{/showFormForUpdate/{id}(id=${user.id})}" class="btn btn-primary">Edytuj</a>
+                    <a th:href="@{/deleteUser/{id}(id=${user.id})}" class="btn delete btn-danger">Usuń</a>
+                </td>
+
         </tr>
         </tbody>
     </table>
