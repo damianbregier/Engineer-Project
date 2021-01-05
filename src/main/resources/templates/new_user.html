@@ -27,14 +27,17 @@
 
         <div class="tab-content">
             <div id="login" class="tab-pane fade in active">
-                    <form action="#" th:action="@{/saveUser}" th:object="${user}"
+                    <form action="#" th:action="@{/showNewUserForm}" th:object="${user}"
                           method="POST">
                         <input type="text" th:field="*{email}"
                                placeholder="E-mail">
+                        <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                               class="validation-message"></label>
 
                         <input type="password" th:field="*{password}"
                                placeholder="Hasło">
-
+                        <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                               class="validation-message"></label>
                         <input type="text" th:field="*{surname}"
                                placeholder="Nazwisko">
 
@@ -48,6 +51,7 @@
                                placeholder="Opis">
 
                         <input type="submit" th:value="Stwórz"> </input>
+                        <div class="text-success" th:text="${successMessage}"></div>
                     </form>
                     <form th:action="@{/usersView}" method="get">
                         <input type="submit" th:value="Powrót"> </input>

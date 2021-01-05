@@ -58,6 +58,9 @@
                     <input type="submit" value="Zarejestruj się">
                     <div class="text-success" th:text="${successMessage}"></div>
                 </form>
+                <form th:action="@{/}" method="get">
+                    <input type="submit" th:value="Powrót"> </input>
+                </form>
             </div>
         </div>
     </div>

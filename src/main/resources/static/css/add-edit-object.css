@@ -14,9 +14,9 @@ body{
     width: 70%;
     height: 70%;
     min-width: 350px;
-    min-height: 650px;
-    max-width: 650px;
-    max-height: 750px;
+    min-height: 770px;
+    max-width: 750px;
+    max-height: 850px;
     top: 50%;
     left: 50%;
     background-color: white;
@@ -34,7 +34,7 @@ body{
     position: absolute;
     /*To center margin have to -half of width and height*/
     width: 300px;
-    height: 600px;
+    height: 700px;
     top: 50%;
     left: 50%;
     background-color: white;

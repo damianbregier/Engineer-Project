@@ -4,10 +4,16 @@ import edu.project.webshop.entity.User;
 import edu.project.webshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -43,20 +49,39 @@ public class UserController {
         return findPaginated(1,"email", "asc", model);
     }
 
-    @GetMapping("/showNewUserForm")
-    public String showNewEmployeeForm(Model model) {
-        // create model attribute to bind form data
+
+    @GetMapping(value="/showNewUserForm")
+    public ModelAndView showNewUserForm(){
+        ModelAndView modelAndView = new ModelAndView();
         User user = new User();
-        model.addAttribute("user", user);
-        return "new_user";
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        modelAndView.addObject("user", user);
+        modelAndView.setViewName("new_user");
+        return modelAndView;
     }
 
-    @PostMapping("/saveUser")
-    public String saveEmployee(@ModelAttribute("user") User user) {
-        // save employee to database
-        userService.saveUser(user);
-        return "redirect:/usersView";
+    @PostMapping(value = "/showNewUserForm")
+    public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
+        ModelAndView modelAndView = new ModelAndView();
+        User userExists = userService.findUserByEmail(user.getEmail());
+        if (userExists != null) {
+            bindingResult
+                    .rejectValue("email", "error.user",
+                            "Użytkownik z tym adresem email już istnieje!");
+        }
+        if (bindingResult.hasErrors()) {
+            modelAndView.setViewName("new_user");
+        } else {
+            userService.saveUser(user);
+            modelAndView.addObject("successMessage", "Użytkownik został zarejestrowany poprawnie!");
+            modelAndView.addObject("user", new User());
+            modelAndView.setViewName("new_user");
+
+        }
+        return modelAndView;
     }
+
+
 
     @GetMapping("/showFormForUpdate/{id}")
     public String showFormForUpdate(@PathVariable ( value = "id") int id, Model model) {
