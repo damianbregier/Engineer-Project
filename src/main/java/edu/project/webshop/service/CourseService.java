@@ -41,9 +41,6 @@ public class CourseService {
     }
 
     public Course saveCourse(Course course){
-        course.setName(course.getName());
-        course.setDescription(course.getDescription());
-        course.setAvatar(course.getAvatar());
         return courseRepository.save(course);
     }
 

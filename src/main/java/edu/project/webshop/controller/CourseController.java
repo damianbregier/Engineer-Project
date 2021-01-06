@@ -65,31 +65,39 @@ public class CourseController {
         return modelAndView;
     }
 
-    @PostMapping("/updateCourse")
-    public String saveCourse(@ModelAttribute("course") Course course) {
+    @PostMapping("/saveCourse")
+    public String saveCourse( @ModelAttribute("course") Course course) {
         courseService.saveCourse(course);
         return "redirect:/coursesView";
     }
 
     @GetMapping("/showCourseFormForUpdate/{id}")
-    public ModelAndView showCourseFormForUpdate(@PathVariable ( value = "id") int id){
+    public String showCourseFormForUpdate(@PathVariable ( value = "id") int id, Model model){
 
-        ModelAndView modelAndView = new ModelAndView();
-        List <Tag> listTags = tagService.getAllTags();
         Course course = courseService.getCourseById(id);
-        modelAndView.addObject("course", course);
-        modelAndView.setViewName("update_course");
-        return modelAndView;
-
-
+        model.addAttribute("course", course);
+        List <Tag> listTags = tagService.getAllTags();
+        model.addAttribute("listTags", listTags);
+        return "update_course";
     }
 
-    @GetMapping("/deleteEmployee/{id}")
+    @PostMapping("/updateCourse")
+    public String updateCourse(@RequestParam int tagId, @ModelAttribute("course") Course course) {
+
+        Tag tag = tagService.getTagById(tagId);
+        course.setTag(tag);
+
+        courseService.saveCourse(course);
+
+        return "redirect:/coursesView";
+    }
+
+
+    @GetMapping("/deleteCourse/{id}")
     public String deleteEmployee(@PathVariable (value = "id") int id) {
 
-        // call delete employee method
         this.courseService.deleteCourseById(id);
-        return "redirect:/";
+        return "redirect:/coursesView";
     }
 
 }

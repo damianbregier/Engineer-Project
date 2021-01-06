@@ -21,7 +21,7 @@
 
         <ul class="nav nav-tabs">
             <li class="nav-item active">
-                <a class="nav-link" data-toggle="tab" href="#login">Edytowanie użytkownika</a>
+                <a class="nav-link" data-toggle="tab" href="#login">Edytowanie kursu</a>
             </li>
         </ul>
 
@@ -30,6 +30,7 @@
                 <form action="#" th:action="@{/updateCourse}" th:object="${course}"
                       method="POST">
                     <input type="hidden" th:field="*{id}" />
+                    <input type="hidden" th:field="*{tag.id}">
                     <input type="text" th:field="*{name}"
                            placeholder="Nazwa">
 
@@ -41,6 +42,11 @@
 
                     <input type="text" th:field="*{avatar}"
                            placeholder="Link do obrazka">
+                    <select th:name="tagId">
+                        <th:block th:each="tag : ${listTags}">
+                            <option th:text="${tag.name}" th:value="${tag.id}"></option>
+                        </th:block>
+                    </select>
 
                     <input type="submit" th:value="Edytuj"> </input>
                 </form>

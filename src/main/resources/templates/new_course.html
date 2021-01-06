@@ -27,7 +27,7 @@
 
         <div class="tab-content">
             <div id="login" class="tab-pane fade in active">
-                <form action="#" th:action="@{/showNewCourseForm}" th:object="${course}"
+                <form action="#" th:action="@{/saveCourse}" th:object="${course}"
                       method="POST">
                     <input type="text" th:field="*{name}"
                            placeholder="Nazwa">
