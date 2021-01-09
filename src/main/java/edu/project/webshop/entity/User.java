@@ -2,6 +2,7 @@ package edu.project.webshop.entity;
 
 import lombok.*;
 
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
 @Entity
+@DynamicUpdate
 @Table(name = "users")
 public class User {
 

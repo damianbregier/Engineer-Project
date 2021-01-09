@@ -113,7 +113,7 @@ public class UserController {
     @PostMapping("/updateUser")
     public String saveEmployee(@ModelAttribute("user") User user) {
         // save employee to database
-        userService.saveUser(user);
+        userService.saveOnlyUserDetails(user);
         return "redirect:/usersView";
     }
 

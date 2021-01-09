@@ -46,6 +46,16 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public User saveOnlyUserDetails(User user) {
+        user.setPassword(user.getPassword());
+        user.setActive(true);
+        Role userRole = roleRepository.findByRole("USER");
+        user.setRoles(new HashSet<>(Arrays.asList(userRole)));
+        return userRepository.save(user);
+    }
+
+
+
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
