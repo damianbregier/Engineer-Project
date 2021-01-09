@@ -36,7 +36,7 @@
                     </textarea>
                     <input type="number" th:field="*{price}"
                            placeholder="Cena">
-                    <input type="file" th:field="*{avatar}" placeholder="Link do obrazka">
+                    <input type="text" th:field="*{avatar}" placeholder="Link do obrazka">
                     <select th:field="*{tag}">
                         <th:block th:each="tag : ${listTags}">
                             <option th:text="${tag.name}" th:value="${tag.id}"></option>

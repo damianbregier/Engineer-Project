@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl-PL"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
     <head>
         <!--About project/keywords-->
         <title>Efektywny Rozwój S. A. - oficjalny sklep</title>
@@ -86,183 +86,148 @@
           -------------------------------------------------------------------------------------->
           <nav id="offer">
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <a class="nav-item nav-link active" id="nav-courses-tab" data-toggle="tab" href="#nav-courses" role="tab" aria-controls="nav-courses" aria-selected="true">Kursy</a>
-              <a class="nav-item nav-link" id="nav-ebooks-tab" data-toggle="tab" href="#nav-ebooks" role="tab" aria-controls="nav-ebooks" aria-selected="false">Ebooki</a>
-              <a class="nav-item nav-link" id="nav-training-tab" data-toggle="tab" href="#nav-training" role="tab" aria-controls="nav-training" aria-selected="false">Szkolenia</a>
-              <a class="nav-item nav-link" id="nav-work-tab" data-toggle="tab" href="#nav-work" role="tab" aria-controls="nav-work" aria-selected="false">Warsztaty</a>
-              
+              <a class="nav-item nav-link active" id="nav-courses-tab" data-toggle="tab" href="#nav-courses" role="tab"  aria-selected="true">Umiejętności Miękkie</a>
+              <a class="nav-item nav-link" id="nav-ebooks-tab" data-toggle="tab" href="#nav-ebooks" role="tab"  aria-selected="false">Umiejętności Twarde</a>
+              <a class="nav-item nav-link" id="nav-training-tab" data-toggle="tab" href="#nav-training" role="tab"  aria-selected="false">Ogolnorozwojowe</a>
+              <a class="nav-item nav-link" id="nav-work-tab" data-toggle="tab" href="#nav-work" role="tab" aria-selected="false">Specjalistyczna</a>
             </div>
           </nav>
+
+
+          </nav>
+
+          <!--
+            Kategoria 1
+          -->
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-courses" role="tabpanel" aria-labelledby="nav-courses-tab">
-              <div class="col-md-12 text-center">
-                <h2>Oferta Kursów</h2>
-              </div>
+
               <div class="container">
-                <div class="row">
-                </div>
-      
-                <div class="courses">
-                  <div class="course-item">
-                    <i class="fas fa-briefcase fa-2x"></i>
-                    <span class="course-title">Analiza matematyczna</span>
-                    <p class="course-description">Modele matematyczne i statystyczne</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
+                <div class="container">
+
+                  <div class="row" th:each="course : ${listCourse}" th:if="*{course.tag.id==1}">
+                    <!--Need to add up to 12-->
+
+                    <div class="col-md-3">
+                      <img class="aboutImage" th:src="*{course.avatar}">
+                    </div>
+
+                    <div class="col-md-7">
+                      <span class="course-title" th:text="*{course.name}"></span>
+                      <p class="course-description" th:text="*{course.description}"></p>
+                      <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
+                    </div >
+
+                    <div class="col-md-2 center">
+                      <input type="submit" value="Do koszyka">
+                    </div>
+
                   </div>
-      
-                  <div class="course-item">
-                    <i class="fas fa-database fa-2x"></i>
-                    <span class="course-title">Big data</span>
-                    <p class="course-description">Zaawansowana analiza danych.</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-      
-                  <div class="course-item">
-                    <i class="fas fa-bug fa-2x"></i>
-                    <span class="course-title">Testowanie oprogramowania</span>
-                    <p class="course-description">Testy z wykorzystaniem najnowszych narzędzi.</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-                  <div class="course-item">
-                    <i class="fas fa-briefcase fa-2x"></i>
-                    <span class="course-title">Analiza matematyczna</span>
-                    <p class="course-description">Modele matematyczne i statystyczne</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-      
-                  <div class="course-item">
-                    <i class="fas fa-database fa-2x"></i>
-                    <span class="course-title">Big data</span>
-                    <p class="course-description">Zaawansowana analiza danych.</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-      
-                  <div class="course-item">
-                    <i class="fas fa-bug fa-2x"></i>
-                    <span class="course-title">Testowanie oprogramowania</span>
-                    <p class="course-description">Testy z wykorzystaniem najnowszych narzędzi.</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-                  <div class="course-item">
-                    <i class="fas fa-briefcase fa-2x"></i>
-                    <span class="course-title">Analiza matematyczna</span>
-                    <p class="course-description">Modele matematyczne i statystyczne</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-      
-                  <div class="course-item">
-                    <i class="fas fa-database fa-2x"></i>
-                    <span class="course-title">Big data</span>
-                    <p class="course-description">Zaawansowana analiza danych.</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-      
-                  <div class="course-item">
-                    <i class="fas fa-bug fa-2x"></i>
-                    <span class="course-title">Testowanie oprogramowania</span>
-                    <p class="course-description">Testy z wykorzystaniem najnowszych narzędzi.</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-                  <div class="course-item">
-                    <i class="fas fa-briefcase fa-2x"></i>
-                    <span class="course-title">Analiza matematyczna</span>
-                    <p class="course-description">Modele matematyczne i statystyczne</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-      
-                  <div class="course-item">
-                    <i class="fas fa-database fa-2x"></i>
-                    <span class="course-title">Big data</span>
-                    <p class="course-description">Zaawansowana analiza danych.</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-      
-                  <div class="course-item">
-                    <i class="fas fa-bug fa-2x"></i>
-                    <span class="course-title">Testowanie oprogramowania</span>
-                    <p class="course-description">Testy z wykorzystaniem najnowszych narzędzi.</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-                  
-  
+
                 </div>
               </div>
             </div>
+
+            <!--
+              Kategoria 2
+            -->
 
             <div class="tab-pane fade" id="nav-ebooks" role="tabpanel" aria-labelledby="nav-ebooks-tab">
-              <div class="col-md-12 text-center">
-                <h2>Oferta Ebooków</h2>
 
-              </div>
               <div class="container">
-                <div class="row">
-                </div>
-      
-                <div class="courses">
-      
-                    <div class="course-item">
-                      <i class="fas fa-cloud-upload-alt fa-2x"></i>
-                      <span class="course-title">Chmura obliczeniowa</span>
-                      <p class="course-description">Dostępność, wygoda oraz niezawodność.</p>
-                      <p class="course-description-hidden">Dowiedz się więcej!</p>
+                <div class="container">
+
+                  <div class="row" th:each="course : ${listCourse}" th:if="*{course.tag.id==2}">
+                    <!--Need to add up to 12-->
+
+                    <div class="col-md-3">
+                      <img class="aboutImage" th:src="*{course.avatar}">
                     </div>
-        
-                    <div class="course-item">
-                      <i class="fas fa-code fa-2x"></i>
-                      <span class="course-title">Języki programowania</span>
-                      <p class="course-description">Wszystkie najważniejsze języki i technologie.</p>
-                      <p class="course-description-hidden">Dowiedz się więcej!</p>
+
+                    <div class="col-md-7">
+                      <span class="course-title" th:text="*{course.name}"></span>
+                      <p class="course-description" th:text="*{course.description}"></p>
+                      <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
+                    </div >
+
+                    <div class="col-md-2 center">
+                      <input type="submit" value="Do koszyka">
                     </div>
-                    
+
+                  </div>
+
                 </div>
               </div>
             </div>
 
-            <div class="tab-pane fade" id="nav-training" role="tabpanel" aria-labelledby="nav-training-tab">
-              <div class="col-md-12 text-center">
-                <h2>Oferta Szkoleniowa</h2>
+            <!--
+                Kategoria 3
+            -->
 
-              </div>
+            <div class="tab-pane fade" id="nav-training" role="tabpanel" aria-labelledby="nav-training-tab">
+
               <div class="container">
-                <div class="row">
-                </div>
-      
-                <div class="courses">
-      
-                  <div class="course-item">
-                    <i class="fas fa-database fa-2x"></i>
-                    <span class="course-title">Big data</span>
-                    <p class="course-description">Zaawansowana analiza danych.</p>
-                    <p class="course-description-hidden">Dowiedz się więcej!</p>
-                  </div>
-        
-                    <div class="course-item">
-                      <i class="fas fa-code fa-2x"></i>
-                      <span class="course-title">Języki programowania</span>
-                      <p class="course-description">Wszystkie najważniejsze języki i technologie.</p>
-                      <p class="course-description-hidden">Dowiedz się więcej!</p>
+                <div class="container">
+
+                  <div class="row" th:each="course : ${listCourse}" th:if="*{course.tag.id==3}">
+                    <!--Need to add up to 12-->
+
+                    <div class="col-md-3">
+                      <img class="aboutImage" th:src="*{course.avatar}">
                     </div>
+
+                    <div class="col-md-7">
+                      <span class="course-title" th:text="*{course.name}"></span>
+                      <p class="course-description" th:text="*{course.description}"></p>
+                      <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
+                    </div >
+
+                    <div class="col-md-2 center">
+                      <input type="submit" value="Do koszyka">
+                    </div>
+
+                  </div>
+
                 </div>
             </div>
           </div>
 
+            <!--
+                Kategoria 4
+              -->
             
             <div class="tab-pane fade" id="nav-work" role="tabpanel" aria-labelledby="nav-work-tab">
               <div class="col-md-12 text-center">
-                <h2>Oferta Warsztatów</h2>
 
               </div>
               <div class="container">
-                <div class="row">
+
+                <div class="row" th:each="course : ${listCourse}" th:if="*{course.tag.id==4}">
+                  <!--Need to add up to 12-->
+
+                  <div class="col-md-3">
+                    <img class="aboutImage" th:src="*{course.avatar}">
+                  </div>
+
+                  <div class="col-md-7">
+                    <span class="course-title" th:text="*{course.name}"></span>
+                    <p class="course-description" th:text="*{course.description}"></p>
+                    <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
+                  </div >
+
+                  <div class="col-md-2 center">
+                    <input type="submit" value="Do koszyka">
+                  </div>
+
                 </div>
-      
-                <div class="courses">
-      
+
                 </div>
             </div>
             </div>
           </div>
           </div>
+          -->
+
           <div class="copyrightSection">
             <div class="col-md-12 text-center">
               <p>&copy; Copyright <a href="https://github.com/damianbregier" style="color: white; text-underline-offset: unset;">Damian Bregier</a> 2020</p>
