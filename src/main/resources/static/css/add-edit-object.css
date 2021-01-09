@@ -75,10 +75,11 @@ li{
 
 .tab-content{
     padding: 20px;
+    display: flex;
 
 }
 
-input[type=text], input[type=password], input[type=number], select {
+input[type=text], input[type=password], input[type=number], select, textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

@@ -31,8 +31,9 @@
                       method="POST">
                     <input type="text" th:field="*{name}"
                            placeholder="Nazwa">
-                    <input type="textarea" th:field="*{description}"
-                           placeholder="Opis">
+                    <textarea th:field="*{description}" placeholder="Opis produktu">
+
+                    </textarea>
                     <input type="number" th:field="*{price}"
                            placeholder="Cena">
                     <input type="text" th:field="*{avatar}" placeholder="Link do obrazka">
