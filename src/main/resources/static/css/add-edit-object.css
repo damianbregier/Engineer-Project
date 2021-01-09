@@ -12,11 +12,12 @@ body{
     position: absolute;
     /*To center margin have to -half of width and height*/
     width: 70%;
-    height: 70%;
+    height: auto; /*was 70%*/
     min-width: 350px;
     min-height: 770px;
     max-width: 750px;
     max-height: 850px;
+    overflow: auto;
     top: 50%;
     left: 50%;
     background-color: white;
@@ -34,7 +35,7 @@ body{
     position: absolute;
     /*To center margin have to -half of width and height*/
     width: 300px;
-    height: 700px;
+    height: auto; /*Was 700px*/
     top: 50%;
     left: 50%;
     background-color: white;
@@ -75,11 +76,11 @@ li{
 
 .tab-content{
     padding: 20px;
-    display: flex;
+    height: auto;
 
 }
 
-input[type=text], input[type=password], input[type=number], select, textarea {
+input[type=text], input[type=password], input[type=number], input[type=image], select, textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
