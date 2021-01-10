@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Favicon-->
+        <link rel="icon" type="image/png" th:href="@{/assets/logo.png}" sizes="196x196" />
 
         <!--Stylesheets-->
         <!--
@@ -30,8 +31,21 @@
                     Main navgation
           ---------------------------------------------------------------------------------->
           <nav id="navigation" class="navbar navbar-expand-md">
-            <div class="navbar-images-left"><div id="logo1"><img th:src="@{/assets/logo.png}" /></div>
-            <div id="logo2-mobile"><img th:src="@{/assets/shopping-caer2.png}" /></div></div>
+            <div class="navbar-images-left"><div id="logo1">
+                <form th:action="@{/shop}" method="get">
+                    <button class="homepageButton" type="Submit">
+                        <img th:src="@{/assets/logo.png}" />
+                    </button>
+                </form>
+            </div>
+            <div id="logo2-mobile">
+                <form th:action="@{/basket}" method="get">
+                    <button class="homepageButton" type="Submit">
+                        <img th:src="@{/assets/shopping-caer2.png}" />
+                    </button>
+                </form>
+            </div>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
@@ -58,7 +72,7 @@
                 </ul>         
                   </div>
                   <div id="logo2">
-                      <form th:action="@{/shop}" method="get">
+                      <form th:action="@{/basket}" method="get">
                           <button class="homepageButton" type="Submit">
                               <img th:src="@{/assets/shopping-caer2.png}" />
                           </button>

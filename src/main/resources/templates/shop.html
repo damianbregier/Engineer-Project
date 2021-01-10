@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Favicon-->
+        <link rel="icon" type="image/png" th:href="@{/assets/logo.png}" sizes="196x196" />
 
         <!--Stylesheets-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -29,7 +30,7 @@
           <nav id="navigation" class="navbar navbar-expand-md">
             <div class="navbar-images-left">
               <div id="logo1">
-                <form th:href="@{/shop}" method="get">
+                <form class="external" th:href="@{/shop}" method="get">
                   <button class="homepageButton" type="Submit">
                     <img th:src="@{/assets/logo.png}" />
                   </button>
