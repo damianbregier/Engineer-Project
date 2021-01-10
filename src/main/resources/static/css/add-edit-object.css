@@ -80,7 +80,7 @@ li{
 
 }
 
-input[type=text], input[type=password], input[type=number], input[type=image], select, textarea {
+input[type=text], input[type=password], input[type=number], input[type=image], input[type=email], select, textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

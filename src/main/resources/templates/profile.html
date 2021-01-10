@@ -100,7 +100,7 @@
                           method="POST">
                         <input type="hidden" th:field="*{id}" />
                         <input type="hidden" th:field="*{password}">
-                        <input type="text" th:field="*{email}"
+                        <input type="email" th:field="*{email}" hidden
                                placeholder="E-mail">
 
                         <input type="text" th:field="*{surname}"
@@ -112,8 +112,9 @@
                         <input type="text" th:field="*{avatar}"
                                placeholder="Link do zdjęcia">
 
-                        <input type="text" th:field="*{description}"
-                               placeholder="Opis">
+                        <textarea th:field="*{description}" placeholder="Miejsce na opis">
+
+                        </textarea>
 
                         <input type="submit" th:value="Edytuj"> </input>
                     </form>
