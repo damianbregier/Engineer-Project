@@ -35,10 +35,12 @@ public class User {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "description")
+    @Lob
+    @Column(name = "description", length = 10000)
     private String description;
 
-    @Column(name = "avatar")
+    @Lob
+    @Column(name = "avatar", length = 1000)
     private String avatar;
 
     @Column(name = "active")

@@ -15,8 +15,15 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+
+    @Lob
+    @Column(name = "description", length = 10000)
     private String description;
+
+    @Lob
+    @Column(name = "avatar", length = 1000)
     private String avatar;
+
     private int price;
 
     @ManyToOne
