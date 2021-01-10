@@ -30,6 +30,10 @@ public class Course {
     @JoinColumn(name = "tag_id")
     private Tag tag;
 
+    @ManyToOne
+    @JoinColumn(name = "basket_id")
+    private Basket basket;
+
     public Course() {
     }
 
