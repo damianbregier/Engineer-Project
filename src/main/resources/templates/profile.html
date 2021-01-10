@@ -68,8 +68,10 @@
               <div class="row">
                 <!--Need to add up to 12-->
                 <div class="col-md-5">
-                    <img class="aboutImage" th:src="@{/assets/avatar.png}">
+                    <img class="aboutImage" th:src="*{user.avatar}">
+                    <p th:text="*{user.description}"></p>
                 </div>
+
                 <div class="col-md-1 v-divider">
 
                 </div>
