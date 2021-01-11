@@ -77,7 +77,7 @@ xmlns:th="http://www.thymeleaf.org">
                   <a class="nav-link" href="#stats">Statystyki</a>
               </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="#courses">Kursy</a>
+                  <a class="nav-link" href="#courses">Galeria</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#contact">Kontakt</a>
@@ -304,38 +304,105 @@ xmlns:th="http://www.thymeleaf.org">
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h2>Kursy</h2>
+              <h2>Galeria zdjęć</h2>
               <div class="filter">
                 <ul id="filters">
                   <!--Data filter is used to communicate with isotope-->
-                  <li><a href="#" data-filter="*" class="current">Wszystkie </a></li>
-                  <li><a href="#" data-filter=".front" >Frontend </a></li>
-                  <li><a href="#" data-filter=".back" >Backend </a></li>
-                  <li><a href="#" data-filter=".full" >Fullstack </a></li>
-                  <li><a href="#" data-filter=".none">Żadne</a></li>
+                  <li><a href="#" data-filter=".front" class="current" >Szkolenia </a></li>
+                  <li><a href="#" data-filter=".back" >Warsztaty </a></li>
+                  <li><a href="#" data-filter=".full" > Prezentacje </a></li>
+                  <li><a href="#" data-filter=".none">Ukryj</a></li>
                 </ul>
               </div>
               <div class="itemsContainer">
 
                 <ul class="items courses">
 
-                  <li onclick="" class="front">
-                      <div class="course-item">
-                        <i class="fas fa-briefcase fa-2x"></i>
-                        <span class="course-title">Analiza matematyczna</span>
-                        <p class="course-description">Modele matematyczne i statystyczne</p>
-                        <p class="course-description-hidden">Dowiedz się więcej!</p>
-                        </div>
+                  <li onclick="" class="front col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide1.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide1.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
                   </li>
 
-                  <li onclick="" class="front">
-                    <div class="course-item">
-                      <i class="fas fa-briefcase fa-2x"></i>
-                      <span class="course-title">Analiza matematyczna</span>
-                      <p class="course-description">Modele matematyczne i statystyczne</p>
-                      <p class="course-description-hidden">Dowiedz się więcej!</p>
+                  <li onclick="" class="front col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide2.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide2.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
                       </div>
-                </li>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+                  <li onclick="" class="back col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide3.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide3.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+                  <li onclick="" class="back col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide4.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide4.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+                  <li onclick="" class="full col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide5.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide5.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+                  <li onclick="" class="full col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide6.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide6.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+
 
                 </ul>
             </div>
