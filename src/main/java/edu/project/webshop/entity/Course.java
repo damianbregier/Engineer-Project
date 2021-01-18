@@ -1,6 +1,7 @@
 package edu.project.webshop.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "courses")
@@ -24,6 +25,9 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "tag_id")
     private Tag tag;
+
+    @OneToMany(mappedBy="cart")
+    private List<CartItem> cartItems;
 
 
     public Course() {

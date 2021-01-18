@@ -2,6 +2,7 @@ package edu.project.webshop.entity;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "carts")
@@ -14,6 +15,10 @@ public class Cart {
 
     @OneToOne(mappedBy = "cart")
     private User user;
+
+    @OneToMany(mappedBy="cart")
+    private List<CartItem> cartItems;
+
 
     public Cart() {
     }
