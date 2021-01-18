@@ -1,5 +1,6 @@
 package edu.project.webshop.controller;
 
+import edu.project.webshop.entity.Cart;
 import edu.project.webshop.entity.User;
 import edu.project.webshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,7 @@ public class SignUpController {
     @PostMapping(value = "/register")
     public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
+        Cart cart = new Cart();
         User userExists = userService.findUserByEmail(user.getEmail());
         if (userExists != null) {
             bindingResult
@@ -51,6 +53,7 @@ public class SignUpController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("sign-up");
         } else {
+            user.setCart(cart);
             userService.saveUser(user);
             modelAndView.addObject("successMessage", "Użytkownik został zarejestrowany poprawnie!");
             modelAndView.addObject("user", new User());
