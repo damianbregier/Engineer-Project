@@ -89,21 +89,21 @@
     <h2>Kursy w koszyku</h2>
     <div class="container">
 
-        <div class="row" th:each="course : ${listCourse}" th:if="*{course.tag.id==2}">
+        <div class="row" th:each="item : ${cartItemList}" th:if="*{item.cart.id==currentId}">
             <!--Need to add up to 12-->
 
             <div class="col-md-3">
-                <img class="aboutImage" th:src="*{course.avatar}">
+                <img class="aboutImage" th:src="*{item.course.avatar}">
             </div>
 
             <div class="col-md-7">
-                <span class="course-title" th:text="*{course.name}"></span>
-                <p class="course-description" th:text="*{course.description}"></p>
-                <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
+                <span class="course-title" th:text="*{item.course.name}"></span>
+                <p class="course-description" th:text="*{item.course.description}"></p>
+                <span>Cena: </span><span th:text="*{item.course.price}"></span><span> zł</span>
             </div >
 
             <div class="col-md-2 center">
-                <input type="submit" value="Do koszyka">
+                <input type="submit" value="Zapłać">
             </div>
 
         </div>
