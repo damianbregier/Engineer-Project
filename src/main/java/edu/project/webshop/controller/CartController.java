@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashSet;
 import java.util.List;
 
 @Controller
@@ -49,6 +50,18 @@ public class CartController {
         int curentId = loggedUser.getId();
         Cart cart = cartService.findCartByid(loggedUser.getId());
         List<CartItem> cartItemList = cartItemService.findAllCartItems();
+
+        HashSet<Role> loggedUserRoles = new HashSet<>(loggedUser.getRoles());
+
+        String log_user_role = "";
+        for(Role role : loggedUserRoles){
+            if(role.getRole().equals("ADMIN")){
+                log_user_role = String.valueOf(role.getRole());
+            }else if(role.getRole().equals("USER")){
+                log_user_role = String.valueOf(role.getRole());
+            }
+        }
+        model.addAttribute("log_user_role", log_user_role);
 
         model.addAttribute("cartItemList", cartItemList);
         model.addAttribute("currentId", curentId);

@@ -385,6 +385,7 @@ body{
 
 input[type=submit] {
   width: 100%;
+  min-width: 100px;
   background-color: #231f20;
   color: white;
   padding: 14px 20px;

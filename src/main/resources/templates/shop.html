@@ -121,20 +121,20 @@
                   <div class="row" th:each="course : ${listCourse}" th:if="*{course.tag.id==1}">
                     <!--Need to add up to 12-->
 
-                    <div class="col-md-3">
+                    <div class="col-md-2 ">
                       <img class="aboutImage" th:src="*{course.avatar}">
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-md-8 ">
                       <span class="course-title" th:text="*{course.name}"></span>
                       <p class="course-description" th:text="*{course.description}"></p>
                       <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
                     </div >
 
                       <form action="#" th:action="@{/cart}" method="POST">
-                    <div class="col-md-2 center">
+                    <div class="col-md-2">
                         <input type="hidden" name="id" th:value="${course.id}" />
-                        <input type="submit" th:value="Test">
+                        <input type="submit" value="Do kosza">
                     </div>
                       </form>
 
@@ -166,9 +166,12 @@
                       <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
                     </div >
 
-                    <div class="col-md-2 center">
-                      <input type="submit" value="Do koszyka">
-                    </div>
+                      <form action="#" th:action="@{/cart}" method="POST">
+                          <div class="col-md-2">
+                              <input type="hidden" name="id" th:value="${course.id}" />
+                              <input type="submit" value="Do kosza">
+                          </div>
+                      </form>
 
                   </div>
 
@@ -198,9 +201,12 @@
                       <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
                     </div >
 
-                    <div class="col-md-2 center">
-                      <input type="submit" value="Do koszyka">
-                    </div>
+                      <form action="#" th:action="@{/cart}" method="POST">
+                          <div class="col-md-2">
+                              <input type="hidden" name="id" th:value="${course.id}" />
+                              <input type="submit" value="Do kosza">
+                          </div>
+                      </form>
 
                   </div>
 
@@ -231,9 +237,12 @@
                     <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
                   </div >
 
-                  <div class="col-md-2 center">
-                    <input type="submit" value="Do koszyka">
-                  </div>
+                    <form action="#" th:action="@{/cart}" method="POST">
+                        <div class="col-md-2">
+                            <input type="hidden" name="id" th:value="${course.id}" />
+                            <input type="submit" value="Do kosza">
+                        </div>
+                    </form>
 
                 </div>
 

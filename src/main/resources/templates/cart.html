@@ -18,7 +18,7 @@
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/admin-panel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/shop.css}">
 
 </head>
 <body>
@@ -28,14 +28,14 @@
 <nav id="navigation" class="navbar navbar-expand-md">
     <div class="navbar-images-left">
         <div id="logo1">
-            <form th:action="@{/shop}" method="get">
+            <form class="external" th:href="@{/shop}" method="get">
                 <button class="homepageButton" type="Submit">
                     <img th:src="@{/assets/logo.png}" />
                 </button>
             </form>
         </div>
         <div id="logo2-mobile">
-            <form th:action="@{/basket}" method="get">
+            <form th:action="@{/cart}" method="get">
                 <button class="homepageButton" type="Submit">
                     <img th:src="@{/assets/shopping-caer2.png}" />
                 </button>
@@ -49,16 +49,21 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active ">
-                <a class="nav-link external" th:href="@{/shop}">Oferta</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="#offer">Oferta</a>
             </li>
         </ul>
         <ul class="navbar-nav justify-content-right">
+                <span th:switch="${log_user_role}">
+                    <li th:case="'USER'" class="nav-item active">
+                      <a class="nav-link external" th:href="@{/profile}">Panel użytkownika</a>
+                    </li>
+                    <li th:case="'ADMIN'" class="nav-item active">
+                      <a class="nav-link external" th:href="@{/usersView}">Panel administratora</a>
+                    </li>
+                </span>
             <li class="nav-item active">
-                <a class="nav-link external" th:href="@{/usersView}">Użytkownicy</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link external" th:href="@{/coursesView}">Kursy</a>
+                <a class="nav-link" href="#courses">Moje kursy</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link external" th:href="@{/logout}">Wyloguj</a>
@@ -66,7 +71,7 @@
         </ul>
     </div>
     <div id="logo2">
-        <form th:action="@{/basket}" method="get">
+        <form th:action="@{/cart}" method="get">
             <button class="homepageButton" type="Submit">
                 <img th:src="@{/assets/shopping-caer2.png}" />
             </button>
@@ -74,16 +79,18 @@
     </div>
     </div>
 </nav>
-
 <!---------------------------------------------------------------------
     Smaller slider
 ------------------------------------------------------------------------>
 <div id="slides">
     <div class="overlay"></div>
-    <div class="divider">
-
+    <div class="slides-container">
+        <img th:src="@{/assets/slide8.jpg}" alt="">
+        <img th:src="@{/assets/slide6.jpg}" alt="">
+        <img th:src="@{/assets/slide7.jpg}" alt="">
     </div>
 </div>
+
 
 <div class="container my-2">
     <h2>Kursy w koszyku</h2>
