@@ -131,9 +131,12 @@
                       <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
                     </div >
 
+                      <form action="#" th:action="@{/cart}" method="POST">
                     <div class="col-md-2 center">
-                        <a th:href="@{/addToCart/{id}(id=${course.id})}" class="btn btn-primary">Koszyk</a>
+                        <input type="hidden" name="id" th:value="${course.id}" />
+                        <input type="submit" th:value="Test">
                     </div>
+                      </form>
 
                   </div>
 
