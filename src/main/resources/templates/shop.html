@@ -56,17 +56,14 @@
                   </li>
               </ul>
               <ul class="navbar-nav justify-content-right">
-                <span th:switch="${log_user_role}">
-                    <li th:case="'USER'" class="nav-item active">
-                      <a class="nav-link external" th:href="@{/profile}">Panel użytkownika</a>
-                    </li>
-                    <li th:case="'ADMIN'" class="nav-item active">
+                <span th:if="${log_user_role=='ADMIN'}">
+                    <li class="nav-item active">
                       <a class="nav-link external" th:href="@{/usersView}">Panel administratora</a>
                     </li>
                 </span>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#courses">Moje kursy</a>
-                </li>
+                  <li class="nav-item active">
+                      <a class="nav-link external" th:href="@{/profile}">Panel użytkownika</a>
+                  </li>
                 <li class="nav-item active">
                     <a class="nav-link external" th:href="@{/logout}">Wyloguj</a>
                 </li>   
@@ -99,9 +96,9 @@
           -------------------------------------------------------------------------------------->
           <nav id="offer">
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <a class="nav-item nav-link active" id="nav-courses-tab" data-toggle="tab" href="#nav-courses" role="tab"  aria-selected="true">Umiejętności Miękkie</a>
-              <a class="nav-item nav-link" id="nav-ebooks-tab" data-toggle="tab" href="#nav-ebooks" role="tab"  aria-selected="false">Umiejętności Twarde</a>
-              <a class="nav-item nav-link" id="nav-training-tab" data-toggle="tab" href="#nav-training" role="tab"  aria-selected="false">Ogolnorozwojowe</a>
+              <a class="nav-item nav-link active" id="nav-courses-tab" data-toggle="tab" href="#nav-courses" role="tab"  aria-selected="true">Umiejętności miękkie</a>
+              <a class="nav-item nav-link" id="nav-ebooks-tab" data-toggle="tab" href="#nav-ebooks" role="tab"  aria-selected="false">Umiejętności twarde</a>
+              <a class="nav-item nav-link" id="nav-training-tab" data-toggle="tab" href="#nav-training" role="tab"  aria-selected="false">Ogólnorozwojowe</a>
               <a class="nav-item nav-link" id="nav-work-tab" data-toggle="tab" href="#nav-work" role="tab" aria-selected="false">Specjalistyczna</a>
             </div>
           </nav>
@@ -128,13 +125,13 @@
                     <div class="col-md-8 ">
                       <span class="course-title" th:text="*{course.name}"></span>
                       <p class="course-description" th:text="*{course.description}"></p>
-                      <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
                     </div >
 
                       <form action="#" th:action="@{/cart}" method="POST">
                     <div class="col-md-2">
+                        <span>Cena: </span><span th:text="*{course.price}"> zł</span><br>
                         <input type="hidden" name="id" th:value="${course.id}" />
-                        <input type="submit" value="Do kosza">
+                        <input type="submit" value="Koszyk">
                     </div>
                       </form>
 
@@ -160,16 +157,16 @@
                       <img class="aboutImage" th:src="*{course.avatar}">
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-md-8">
                       <span class="course-title" th:text="*{course.name}"></span>
                       <p class="course-description" th:text="*{course.description}"></p>
-                      <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
                     </div >
 
                       <form action="#" th:action="@{/cart}" method="POST">
                           <div class="col-md-2">
+                              <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span><br>
                               <input type="hidden" name="id" th:value="${course.id}" />
-                              <input type="submit" value="Do kosza">
+                              <input type="submit" value="Koszyk">
                           </div>
                       </form>
 
@@ -195,16 +192,16 @@
                       <img class="aboutImage" th:src="*{course.avatar}">
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-md-8">
                       <span class="course-title" th:text="*{course.name}"></span>
                       <p class="course-description" th:text="*{course.description}"></p>
-                      <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
                     </div >
 
                       <form action="#" th:action="@{/cart}" method="POST">
                           <div class="col-md-2">
+                              <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span><br>
                               <input type="hidden" name="id" th:value="${course.id}" />
-                              <input type="submit" value="Do kosza">
+                              <input type="submit" value="Koszyk">
                           </div>
                       </form>
 
@@ -231,16 +228,16 @@
                     <img class="aboutImage" th:src="*{course.avatar}">
                   </div>
 
-                  <div class="col-md-7">
+                  <div class="col-md-8">
                     <span class="course-title" th:text="*{course.name}"></span>
                     <p class="course-description" th:text="*{course.description}"></p>
-                    <span>Cena: </span><span th:text="*{course.price}"></span><span> zł</span>
                   </div >
 
                     <form action="#" th:action="@{/cart}" method="POST">
                         <div class="col-md-2">
+                            <span>Cena: </span><span th:text="*{course.price}"> zł</span><br>
                             <input type="hidden" name="id" th:value="${course.id}" />
-                            <input type="submit" value="Do kosza">
+                            <input type="submit" value="Koszyk">
                         </div>
                     </form>
 

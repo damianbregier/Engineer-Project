@@ -58,7 +58,6 @@ public class SignUpController {
             modelAndView.addObject("successMessage", "Użytkownik został zarejestrowany poprawnie!");
             modelAndView.addObject("user", new User());
             modelAndView.setViewName("sign-up");
-
         }
         return modelAndView;
     }

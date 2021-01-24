@@ -21,7 +21,7 @@ public class User {
     @NotEmpty(message = "*Pole e-mail nie może być puste!")
     private String email;
 
-    @Column(unique = true)
+    @Column(unique = false)
     @Length(min = 5, message = "*Hasło musi zawierać conajmniej 5 znaków!")
     @NotEmpty(message = "*Pole hasło nie może być puste!")
     private String password;

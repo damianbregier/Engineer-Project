@@ -106,11 +106,10 @@
             <div class="col-md-7">
                 <span class="course-title" th:text="*{item.course.name}"></span>
                 <p class="course-description" th:text="*{item.course.description}"></p>
-                <span>Cena: </span><span th:text="*{item.course.price}"></span><span> zł</span>
             </div >
 
             <div class="col-md-2 center">
-                <input type="submit" value="Zapłać">
+                <span>Cena: </span><span th:text="*{item.course.price}"></span><span> zł</span>
             </div>
 
         </div>
