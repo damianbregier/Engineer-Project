@@ -109,12 +109,15 @@
                         <input type="text" th:field="*{name}"
                                placeholder="Imię">
 
-                        <input type="file" th:field="*{avatar}"
-                               placeholder="Link do zdjęcia">
-
                         <textarea th:field="*{description}" placeholder="Miejsce na opis">
-
                         </textarea>
+
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" th:field="*{avatar}" class="custom-file-input" id="inputGroupFile01">
+                                <label class="custom-file-label" for="inputGroupFile01">Załaduj nowe zdjęcie</label>
+                            </div>
+                        </div>
 
                         <input type="submit" th:value="Zapisz"> </input>
                     </form>

@@ -176,6 +176,12 @@
     border-radius: 4px;
     cursor: pointer;
   }
+
+custom-file{
+  background-color: #231f20!important;
+  color: white!important;
+
+}
   
   input[type=submit]:hover {
     background-color: #231f20;
