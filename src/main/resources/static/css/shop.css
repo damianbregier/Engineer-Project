@@ -409,6 +409,12 @@ input[type=submit]:hover {
 
 }
 
+.price{
+  text-align: center!important;
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+}
   
 
 

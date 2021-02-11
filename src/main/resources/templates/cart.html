@@ -108,11 +108,17 @@
                 <p class="course-description" th:text="*{item.course.description}"></p>
             </div >
 
-            <div class="col-md-2 center">
-                <span>Cena: </span><span th:text="*{item.course.price}"></span><span> zł</span>
+            <div class="col-md-2 d-flex flex-column">
+                <div class="justify-content-md-end">
+                    <div class="price" th:text="*{item.course.price}+' zł'"></div>
+                </div>
+                <a th:href="@{/deleteCartItem/{id}}" class="btn delete btn-danger">Usuń</a>
             </div>
-
         </div>
+        <div class="col-md-12">
+            <input type="submit" value="Przejdź do płatności">
+        </div>
+        <br><br><br><br><br>
 
     </div>
 

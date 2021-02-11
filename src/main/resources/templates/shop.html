@@ -61,9 +61,11 @@
                       <a class="nav-link external" th:href="@{/usersView}">Panel administratora</a>
                     </li>
                 </span>
+                  <span th:if="${log_user_role=='USER'}">
                   <li class="nav-item active">
                       <a class="nav-link external" th:href="@{/profile}">Panel użytkownika</a>
                   </li>
+                  </span>
                 <li class="nav-item active">
                     <a class="nav-link external" th:href="@{/logout}">Wyloguj</a>
                 </li>   
@@ -112,8 +114,9 @@
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-courses" role="tabpanel" aria-labelledby="nav-courses-tab">
 
-              <div class="container">
+
                 <div class="container">
+                    <div class="container">
 
                   <div class="row" th:each="course : ${listCourse}" th:if="*{course.tag.id==1}">
                     <!--Need to add up to 12-->
@@ -127,18 +130,20 @@
                       <p class="course-description" th:text="*{course.description}"></p>
                     </div >
 
-                      <form action="#" th:action="@{/cart}" method="POST">
-                    <div class="col-md-2">
-                        <span>Cena: </span><span th:text="*{course.price}"> zł</span><br>
-                        <input type="hidden" name="id" th:value="${course.id}" />
-                        <input type="submit" value="Koszyk">
-                    </div>
+                          <div class="col-md-2 d-flex flex-column">
+                              <div class="justify-content-md-end">
+                                  <div class="price" th:text="*{course.price}+' zł'"></div>
+                              </div>
+                              <form action="#" th:action="@{/cart}" method="POST">
+                              <input type="hidden" name="id" th:value="${course.id}" />
+                              <input type="submit" value="Koszyk">
+                          </div>
                       </form>
 
                   </div>
 
                 </div>
-              </div>
+                </div>
             </div>
 
             <!--
