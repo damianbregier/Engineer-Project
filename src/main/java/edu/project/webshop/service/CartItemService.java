@@ -18,6 +18,10 @@ public class CartItemService {
         return cartItemRepository.save(cartItem);
     }
 
+    public void deleteCartItem(CartItem cartItem){
+        cartItemRepository.delete(cartItem);
+    }
+
     public CartItem findCartItemByid(int id){
         return cartItemRepository.findById(id);
     }

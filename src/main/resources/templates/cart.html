@@ -106,10 +106,16 @@
             </div >
 
             <div class="col-md-2 d-flex flex-column">
-                <div class="justify-content-md-end">
-                    <div class="price" th:text="*{item.course.price}+' zł'"></div>
-                </div>
-                <a th:href="@{/deleteCartItem/{id}}" class="btn delete btn-danger">Usuń</a>
+                <form action="#" th:action="@{/removeFromCart}" method="GET">
+                    <div class="justify-content-md-end">
+                        <div class="price" th:text="*{item.course.price}+' zł'"></div>
+                        <div class="price" th:text="*{item.id}"></div>
+
+                    </div>
+                    <input type="hidden" name="id" th:value="${item.id}" />
+                    <!--<a th:href="@{/deleteCartItem/{id}}" class="btn delete btn-danger">Usuń</a> -->
+                    <input type="submit" class="btn delete btn-danger" value="Usuń">
+                </form>
             </div>
         </div>
         <div class="col-md-12">

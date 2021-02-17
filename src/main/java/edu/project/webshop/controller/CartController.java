@@ -11,6 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -89,4 +90,20 @@ public class CartController {
 
         return "redirect:/cart";
     }
+
+    @GetMapping("/removeFromCart")
+    public String removeFromCart(@RequestParam int id, Model model){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User loggedUser = userService.findUserByEmail(auth.getName());
+
+        int curentId = loggedUser.getId();
+        Cart cart = cartService.findCartByid(loggedUser.getId());
+        CartItem currentItem = cartItemService.findCartItemByid(id);
+
+        cartItemService.deleteCartItem(currentItem);
+        return "redirect:/cart";
+
+    }
+
+
 }
