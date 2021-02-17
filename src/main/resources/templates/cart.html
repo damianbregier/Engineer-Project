@@ -109,7 +109,6 @@
                 <form action="#" th:action="@{/removeFromCart}" method="GET">
                     <div class="justify-content-md-end">
                         <div class="price" th:text="*{item.course.price}+' zł'"></div>
-                        <div class="price" th:text="*{item.id}"></div>
 
                     </div>
                     <input type="hidden" name="id" th:value="${item.id}" />
