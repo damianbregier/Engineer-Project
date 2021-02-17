@@ -39,7 +39,7 @@
                 </form>
             </div>
             <div id="logo2-mobile">
-                <form th:action="@{/basket}" method="get">
+                <form th:action="@{/cart}" method="get">
                     <button class="homepageButton" type="Submit">
                         <img th:src="@{/assets/shopping-caer2.png}" />
                     </button>
@@ -56,23 +56,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link external" th:href="@{/shop}">Oferta</a>
+                    <a class="nav-link external" th:href="@{/shop}">Powrót do sklepu</a>
                 </li>
               </ul>
               <ul class="navbar-nav justify-content-right">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Panel użytkownika</a>
-              </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#courses">Moje kursy</a>
-                </li>
+                  <li class="nav-item active">
+                      <a class="nav-link external" th:href="@{/profile}">Panel użytkownika</a>
+                  </li>
                 <li class="nav-item active">
                     <a class="nav-link external" th:href="@{/logout}">Wyloguj</a>
                 </li>   
                 </ul>         
                   </div>
                   <div id="logo2">
-                      <form th:action="@{/basket}" method="get">
+                      <form th:action="@{/cart}" method="get">
                           <button class="homepageButton" type="Submit">
                               <img th:src="@{/assets/shopping-caer2.png}" />
                           </button>
@@ -112,12 +109,7 @@
                         <textarea th:field="*{description}" placeholder="Miejsce na opis">
                         </textarea>
 
-                        <div class="input-group mb-3">
-                            <div class="custom-file">
-                                <input type="file" th:field="*{avatar}" class="custom-file-input" id="inputGroupFile01">
-                                <label class="custom-file-label" for="inputGroupFile01">Załaduj nowe zdjęcie</label>
-                            </div>
-                        </div>
+                        <input type="text" th:field="*{avatar}">
 
                         <input type="submit" th:value="Zapisz"> </input>
                     </form>
