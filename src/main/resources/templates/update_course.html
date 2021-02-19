@@ -49,7 +49,12 @@
                            placeholder="Link do obrazka">
                     <select th:name="tagId">
                         <th:block th:each="tag : ${listTags}">
-                            <option th:text="${tag.name}" th:value="${tag.id}"></option>
+                            <th:block th:if="${tag.id==course.tag.id}">
+                                <option th:text="${tag.name}" th:value="${tag.id}" selected></option>
+                            </th:block>
+                            <th:block th:if="${tag.id!=course.tag.id}">
+                                <option th:text="${tag.name}" th:value="${tag.id}" ></option>
+                            </th:block>
                         </th:block>
                     </select>
 
