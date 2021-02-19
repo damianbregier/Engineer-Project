@@ -1,5 +1,6 @@
 package edu.project.webshop.controller;
 
+import edu.project.webshop.entity.Cart;
 import edu.project.webshop.entity.Role;
 import edu.project.webshop.entity.User;
 import edu.project.webshop.service.UserService;
@@ -78,6 +79,7 @@ public class UserController {
     @PostMapping(value = "/showNewUserForm")
     public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
+        Cart cart = new Cart();
         User userExists = userService.findUserByEmail(user.getEmail());
         if (userExists != null) {
             bindingResult
@@ -87,6 +89,7 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("new_user");
         } else {
+            user.setCart(cart);
             userService.saveUser(user);
             modelAndView.addObject("successMessage", "Użytkownik został zarejestrowany poprawnie!");
             modelAndView.addObject("user", new User());

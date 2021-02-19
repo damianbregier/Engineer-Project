@@ -27,8 +27,13 @@ public class MyUserDetailsService implements UserDetailsService {
     @Transactional
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userService.findUserByEmail(email);
-        List<GrantedAuthority> authorities = getUserAuthority(user.getRoles());
-        return buildUserForAuthentication(user, authorities);
+
+        try{
+            List<GrantedAuthority> authorities = getUserAuthority(user.getRoles());
+            return buildUserForAuthentication(user, authorities);
+        }catch (NullPointerException e){
+            throw new NullPointerException("User not found!");
+        }
     }
 
     private List<GrantedAuthority> getUserAuthority(Set<Role> userRoles) {
