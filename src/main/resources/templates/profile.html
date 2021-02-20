@@ -83,9 +83,19 @@
               <div class="row">
                 <!--Need to add up to 12-->
                 <div class="col-md-5">
-                    <img class="aboutImage" th:src="*{user.avatar}">
+                    <img class="aboutImage" th:src="*{user.avatar}"><br>
+                    <div>
+                        <span th:if="*{user.name!=null}">
+                            <span style="font-size: 24px; font-weight: bold;" th:text="*{user.name}+' '"></span>
+                        </span>
+                        <span th:if="*{user.surname!=null}">
+                            <span style="font-size: 24px; font-weight: bold;" th:text="*{user.surname}"></span>
+                        </span>
+                    </div>
+
                     <p th:text="*{user.description}"></p>
                 </div>
+                  <br><br><br><br>
 
                 <div class="col-md-1 v-divider">
 
@@ -100,7 +110,6 @@
                         <input type="hidden" th:field="*{cart}">
                         <input type="email" th:field="*{email}" hidden
                                placeholder="E-mail">
-
                         <input type="text" th:field="*{surname}"
                                placeholder="Nazwisko">
 
