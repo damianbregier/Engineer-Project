@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl-PL"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--About project/keywords-->
+    <title>Efektywny Rozwój S. A. - oficjalny sklep</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <meta name="description" content="Oficjalna strona i sklep internetowy spółki Efektywny Rozwój S.A.">
+    <meta name="keywords" content="Efektywny Rozwój, Grzegorz Kobuszewski, Kursy, Szkolenia, Warsztaty, Ebooki">
+    <meta name="author" content="Damian Bregier">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Favicon-->
+    <link rel="icon" type="image/png" th:href="@{/assets/logo.png}" sizes="196x196" />
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="css/sign-in.css" class="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="background">
+<div class="border" >
+    <div class="main-window">
+        <div class="logo-container"><img class="menu-logo" th:src="@{/assets/logo.png}" /></div>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <form th:action="@{/login}" method="get">
+                    <button class="nav-link" type="Submit">Logowanie</button>
+                </form>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" data-toggle="tab" href="#register">Rejestracja</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="register" class="tab-pane active">
+                <form th:action="@{/register}"
+                      th:object="${user}" method="post" class="form-horizontal"
+                      role="form">
+                    <label>E-mail
+                        <input type="email" id="login" th:field="*{email}" placeholder="Podaj e-mail">
+                    </label>
+                    <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                           class="validation-message"></label>
+
+                    <label >Hasło
+                        <input type="password" id="password" th:field="*{password}" placeholder="Podaj hasło">
+                    </label>
+                    <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                           class="validation-message"></label>
+
+                    <input type="submit" value="Zarejestruj się">
+                    <div class="text-success" th:text="${successMessage}"></div>
+                </form>
+                <form th:action="@{/}" method="get">
+                    <input type="submit" th:value="Powrót"> </input>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="src/main/resources/static/js/script.js"></script>
+</body>

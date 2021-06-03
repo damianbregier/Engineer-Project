@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl-PL" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Administratora</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/add-edit-object.css}" class="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="icon" type="image/png" th:href="@{/assets/logo.png}" sizes="196x196" />
+
+</head>
+
+<body class="background">
+<div class="border" >
+    <div class="main-window">
+        <div class="logo-container"><img class="menu-logo" th:src="@{/assets/logo.png}" /></div>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item active">
+                <a class="nav-link" data-toggle="tab" href="#login">Kreator kursów</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="login" class="tab-pane fade in active">
+                <form action="#" th:action="@{/saveCourse}" th:object="${course}"
+                      method="POST">
+                    <input type="text" th:field="*{name}"
+                           placeholder="Nazwa">
+                    <textarea th:field="*{description}" placeholder="Opis produktu">
+
+                    </textarea>
+                    <input type="number" th:field="*{price}"
+                           placeholder="Cena">
+                    <input type="text" th:field="*{avatar}" placeholder="Link do obrazka">
+                    <select th:field="*{tag}">
+                        <th:block th:each="tag : ${listTags}">
+                            <option th:text="${tag.name}" th:value="${tag.id}"></option>
+                        </th:block>
+                    </select>
+
+                    <input type="submit" th:value="Stwórz"> </input>
+                </form>
+                <form th:action="@{/coursesView}" method="get">
+                    <input type="submit" th:value="Powrót"> </input>
+                </form>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

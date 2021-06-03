@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/webshop?useSSL=true
+    username: root
+    password:
+    hikari:
+      minimumIdle: 1
+      maximumPoolSize: 8
+    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+
+## If default port already in use
+server:
+  port: 8088
+  ## Session timeout
+  servlet:
+    session:
+      timeout:

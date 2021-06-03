@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl-PL"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--About project/keywords-->
+        <title>Efektywny Rozwój S. A. - oficjalny sklep</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta name="description" content="Oficjalna strona i sklep internetowy spółki Efektywny Rozwój S.A.">
+        <meta name="keywords" content="Efektywny Rozwój, Grzegorz Kobuszewski, Kursy, Szkolenia, Warsztaty, Ebooki">
+        <meta name="author" content="Damian Bregier">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Favicon-->
+        <link rel="icon" type="image/png" th:href="@{/assets/logo.png}" sizes="196x196" />
+
+        <!--Stylesheets-->
+        <!--
+            jquery file must be attached BEFORE bootstrap file otherwise it won't work and
+            js on page will give uncaught error related to this issue
+        -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/profile.css}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    </head>
+
+    <body>
+
+            <!--------------------------------------------------------------------------------
+                    Main navgation
+          ---------------------------------------------------------------------------------->
+          <nav id="navigation" class="navbar navbar-expand-md">
+            <div class="navbar-images-left"><div id="logo1">
+                <form th:action="@{/shop}" method="get">
+                    <button class="homepageButton" type="Submit">
+                        <img th:src="@{/assets/logo.png}" />
+                    </button>
+                </form>
+            </div>
+            <div id="logo2-mobile">
+                <form th:action="@{/cart}" method="get">
+                    <button class="homepageButton" type="Submit">
+                        <img th:src="@{/assets/shopping-caer2.png}" />
+                    </button>
+                </form>
+            </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+            <span><img class="menu-button" th:src="@{/assets/menu-button.png}"/></span>
+          </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link external" th:href="@{/shop}">Powrót do sklepu</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav justify-content-right">
+                  <li class="nav-item active">
+                      <a class="nav-link external" th:href="@{/profile}">Panel użytkownika</a>
+                  </li>
+                <li class="nav-item active">
+                    <a class="nav-link external" th:href="@{/logout}">Wyloguj</a>
+                </li>   
+                </ul>         
+                  </div>
+                  <div id="logo2">
+                      <form th:action="@{/cart}" method="get">
+                          <button class="homepageButton" type="Submit">
+                              <img th:src="@{/assets/shopping-caer2.png}" />
+                          </button>
+                      </form>
+                  </div>
+            </div>
+          </nav>
+
+          <div id="about" class="section" data-aos="fade-up">
+            <div class="container">
+              <div class="row">
+                <!--Need to add up to 12-->
+                <div class="col-md-5">
+                    <img class="aboutImage" th:src="*{user.avatar}"><br>
+                    <div>
+                        <span th:if="*{user.name!=null}">
+                            <span style="font-size: 24px; font-weight: bold;" th:text="*{user.name}+' '"></span>
+                        </span>
+                        <span th:if="*{user.surname!=null}">
+                            <span style="font-size: 24px; font-weight: bold;" th:text="*{user.surname}"></span>
+                        </span>
+                    </div>
+
+                    <p th:text="*{user.description}"></p>
+                </div>
+                  <br><br><br><br>
+
+                <div class="col-md-1 v-divider">
+
+                </div>
+                <div class="col-md-6">
+
+                <h2>Dane użytkownika </h2>
+                    <form action="#" th:action="@{/updateUserProfile}" th:object="${user}"
+                          method="POST">
+                        <input type="hidden" th:field="*{id}" />
+                        <input type="hidden" th:field="*{password}">
+                        <input type="hidden" th:field="*{cart}">
+                        <input type="email" th:field="*{email}" hidden
+                               placeholder="E-mail">
+                        <input type="text" th:field="*{surname}"
+                               placeholder="Nazwisko">
+
+                        <input type="text" th:field="*{name}"
+                               placeholder="Imię">
+
+                        <textarea th:field="*{description}" placeholder="Miejsce na opis">
+                        </textarea>
+
+                        <input type="text" th:field="*{avatar}">
+
+                        <input type="submit" th:value="Zapisz"> </input>
+                    </form>
+                </div >
+              </div> 
+              </div>
+
+              <div class="divider">
+
+              </div>
+
+              <div class="container">
+                <div class="row">
+                </div>
+      
+                <div class="courses">
+      
+                    <div class="course-item">
+                      <i class="fas fa-cloud-upload-alt fa-2x"></i>
+                      <span class="course-title">Chmura obliczeniowa</span>
+                      <p class="course-description">Dostępność, wygoda oraz niezawodność.</p>
+                      <p class="course-description-hidden">Dowiedz się więcej!</p>
+                    </div>
+        
+                    <div class="course-item">
+                      <i class="fas fa-code fa-2x"></i>
+                      <span class="course-title">Języki programowania</span>
+                      <p class="course-description">Wszystkie najważniejsze języki i technologie.</p>
+                      <p class="course-description-hidden">Dowiedz się więcej!</p>
+                    </div>
+
+                    <div class="course-item">
+                        <i class="fas fa-briefcase fa-2x"></i>
+                        <span class="course-title">Analiza matematyczna</span>
+                        <p class="course-description">Modele matematyczne i statystyczne</p>
+                        <p class="course-description-hidden">Dowiedz się więcej!</p>
+                      </div>
+          
+                      <div class="course-item">
+                        <i class="fas fa-database fa-2x"></i>
+                        <span class="course-title">Big data</span>
+                        <p class="course-description">Zaawansowana analiza danych.</p>
+                        <p class="course-description-hidden">Dowiedz się więcej!</p>
+                      </div>
+          
+                      <div class="course-item">
+                        <i class="fas fa-bug fa-2x"></i>
+                        <span class="course-title">Testowanie oprogramowania</span>
+                        <p class="course-description">Testy z wykorzystaniem najnowszych narzędzi.</p>
+                        <p class="course-description-hidden">Dowiedz się więcej!</p>
+                      </div>
+
+                      
+                    
+                </div>
+              </div>
+          </div>
+
+
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                    crossorigin="anonymous"></script>
+            <script th:src="@{/js/shop.js}"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </body>

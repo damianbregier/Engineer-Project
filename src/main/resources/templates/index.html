@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pl-PL"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--About project/keywords-->
+        <title>Efektywny Rozwój S. A. - oficjalny sklep</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta name="description" content="Oficjalna strona i sklep internetowy spółki Efektywny Rozwój S.A.">
+        <meta name="keywords" content="Efektywny Rozwój, Grzegorz Kobuszewski, Kursy, Szkolenia, Warsztaty, Ebooki">
+        <meta name="author" content="Damian Bregier">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!--Favicon-->
+      <link rel="icon" type="image/png" th:href="@{/assets/logo.png}" sizes="196x196" />
+
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="/css/superslides.css" class="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+        
+        
+    </head>
+    <body>
+        <!----------------------------------------------------------------------------
+                Loader
+        ------------------------------------------------------------------------------>
+        <div class="loader">
+            <div class="loader-inner">
+            </div>
+        </div>
+
+        <!----------------------------------------------------------------------------
+                Navigation
+        ------------------------------------------------------------------------------>
+
+        <!--navbar and navbar-expand-lg are bootstrap classes-->
+        <nav id="navigation" class="navbar navbar-expand-md">
+            <div class="navbar-images-left"><div id="logo1">
+              <form th:action="@{/}" method="get">
+                <button class="homepageButton" type="Submit">
+                <img th:src="@{/assets/logo.png}" />
+              </button>
+              </form>
+            </div>
+            <div id="logo2-mobile">
+              <form th:action="@{/shop}" method="get">
+                <button class="homepageButton" type="Submit">
+                  <img th:src="@{/assets/bag.png}" />
+                </button>
+              </form>
+            </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><img class="menu-button" th:src="@{/assets/menu-button.png}"/></span>
+            <!--<span class="navbar-toggler-icon"></span> -->
+          </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#about">O&nbspfirmie</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#offer">Oferta</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#stats">Statystyki</a>
+              </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#courses">Galeria</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#contact">Kontakt</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav justify-content-right">
+                <li class="nav-item active">
+                  <a class="nav-link external" th:href="@{/shop.html}" >Sklep</a>
+              </li>
+                <li class="nav-item active">
+                  <a class="nav-link external" th:href="@{/sign-in.html}">Zaloguj&nbspsię</a>
+              </li>
+              
+                </ul>       
+                  </div>
+            </div>
+            <div id="logo2"><a th:href="@{/shop.html}" target=""><img th:src="@{/assets/bag.png}" /></a></div>
+
+          </nav>
+
+        <!----------------------------------------------------------------------
+            Slider
+        ------------------------------------------------------------------------>
+  <div id="slides">
+    <div class="overlay"></div>
+    <div class="slides-container">
+      <img th:src="@{/assets/slide1.jpg}" alt="">
+      <img th:src="@{/assets/slide2.jpg}" alt="">
+      <img th:src="@{/assets/slide3.jpg}" alt="">
+      <img th:src="@{/assets/slide4.jpg}" alt="">
+    </div>
+    <div class="titleMessage">
+      <div class="heading">
+        <p class="main">Efektywny Rozwój</p>
+        <!--Subs text is given in JS file as part of the function-->
+        <p class="sub typed"></p>
+
+      </div>
+    </div>
+
+    <nav class="slides-navigation">
+      <a href="#" class="next"></a>
+      <a href="#" class="prev"></a>
+    </nav>
+
+  </div>
+
+    <!---------------------------------------------------------------------------
+    About
+    ----------------------------------------------------------------------------->
+
+  <div id="about" class="section" data-aos="fade-up">
+    <div class="container">
+      <div class="row">
+        <!--Need to add up to 12-->
+        <div class="col-md-4">
+          
+        </div>
+        <div class="col-md-8">
+        <h2>Efektywny Rozwój </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, alias! Laboriosam enim ullam quis magnam accusamus quam amet rerum reprehenderit officia, eius saepe voluptates consequuntur alias consequatur assumenda culpa voluptatum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi culpa id doloribus, saepe accusamus molestias delectus quae animi magni reprehenderit eveniet, distinctio quas at explicabo iste, sint recusandae consequuntur possimus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, laboriosam mollitia! Exercitationem voluptatem tenetur numquam rem saepe! Veniam sint doloremque possimus dolorem consequuntur commodi quibusdam, quis ex. Inventore, autem debitis?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab a explicabo optio quos omnis libero! Tenetur recusandae labore inventore saepe doloribus earum, mollitia, nulla, voluptatem quia porro ad sed repudiandae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam ipsum obcaecati ea dolores quibusdam modi aspernatur corrupti dolore repellat eos natus deserunt ex nobis, fugiat rerum a quasi. Iste, atque.</p>
+        </div >
+      </div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <h2>Nasz zespół</h2>
+        </div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <img class="aboutImage" th:src="@{/assets/avatar.png}">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquid unde incidunt vitae fugiat perspiciatis neque, iste cupiditate accusantium quaerat necessitatibus laudantium molestias quos repellendus asperiores dolore non consequuntur repellat!</p>
+        </div>
+        <div class="col-md-4">
+          <img class="aboutImage" th:src="@{/assets/avatar2.png}">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ea maxime eum enim beatae doloribus consequuntur, quidem labore sit at, ipsa corrupti. Unde sint suscipit non numquam quod ducimus similique.</p>
+        </div>
+        <div class="col-md-4">
+          <img class="aboutImage" th:src="@{/assets/avatar3.png}">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis, iusto exercitationem illum repudiandae nihil ullam laboriosam recusandae est. Et nisi aliquam ut in! Minima temporibus id ullam rerum laborum!</p>
+        </div>
+      </div>
+      </div>
+
+    <!---------------------------------------------------------------------------
+        Offer
+    ----------------------------------------------------------------------------->
+
+      <div id="offer" class="offerSection section" data-aos="fade-up">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2>Zakres świadczonych usług</h2>
+              <h5>W ofercie posiadamy szkolenia, warsztaty, kursy, seminaria, wspieramy także w prowadzeniu rekrutacji i budowaniu relacji w zespole</h5>
+              <br><br>
+            </div>
+          </div>
+
+          <div class="courses">
+            <div class="course-item">
+              <i class="fas fa-briefcase fa-2x"></i>
+              <span class="course-title">Szkolenia stacjonarne</span>
+              <p class="course-description">Zarówno w zakresie kompetencji miękkich jak i twardych. Zakres i cena szkolenia zależy od ilości uczestników oraz miejsca szkolenia</p>
+              <a class="nav-link course-description-hidden" href="#contact">Skontaktuj się z nami!</a>
+            </div>
+
+            <div class="course-item">
+              <i class="fas fa-laptop-code fa-2x"></i>">
+              <span class="course-title">Warsztaty stacjonarne</span>
+              <p class="course-description">Warsztaty dostępne są w zakresie zarządzania, organizacji pracy, budowania relacji w zespole oraz umiejętności technicznych z zakresu budownictwa.</p>
+              <a class="nav-link course-description-hidden" href="#contact">Skontaktuj się z nami!</a>
+
+            </div>
+
+            <div class="course-item">
+              <i class="fas fa-bug fa-2x"></i>
+              <span class="course-title">Kursy stacjonarne</span>
+              <p class="course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat magna id ex maximus tempus. Suspendisse orci mi, iaculis in elit ac, ultricies pulvinar enim. Nullam a magna ac sapien facilisis molestie.
+              </p>
+              <a class="nav-link course-description-hidden" href="#contact">Skontaktuj się z nami!</a>
+
+            </div>
+
+              <div class="course-item">
+                <i class="fas fa-cloud-upload-alt fa-2x"></i>
+                <span class="course-title">Procesy z zakresu HR</span>
+                <p class="course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat magna id ex maximus tempus. Suspendisse orci mi, iaculis in elit ac, ultricies pulvinar enim. Nullam a magna ac sapien facilisis molestie.</p>
+                <a class="nav-link course-description-hidden" href="#contact">Skontaktuj się z nami!</a>
+
+              </div>
+
+              <div class="course-item">
+                <i class="fas fa-code fa-2x"></i>
+                <span class="course-title">Seminaria</span>
+                <p class="course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat magna id ex maximus tempus. Suspendisse orci mi, iaculis in elit ac, ultricies pulvinar enim. Nullam a magna ac sapien facilisis molestie.</p>
+                <a class="nav-link course-description-hidden" href="#contact">Skontaktuj się z nami!</a>
+
+              </div>
+          </div>
+
+          <div class="col-md-12 text-center">
+            <br><br>
+            <h6>Dodatkowe informacje można uzyskać kilkając przycisk "Skontaktuj się z nami" w karcie danej usługi lub przechodząc bezpośrednio do znajdującego się niżej formularza kontaktowego.</h6>
+            <br><br>
+            <h6>Posiadamy również ofertę kursów online, które można kupić bezpośrednio w zakładce sklep.</h6>
+          </div>
+        </div>
+        </div>
+
+          <!------------------------------------------------------------------------------
+  
+    Statistics 
+  
+  ----------------------------------------------------------------------------->
+
+  <div id="stats" class="statsSection section"  data-aos="fade-up">
+    <div class="container">
+      <div class="col-md-12 text-center">
+        <h2>Możesz nam zaufać, ponieważ</h2>
+        <p>dotychczas zrealizowaliśmy:</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-8">
+          <div class="squareItem">
+            <div class="squareInnerContainer">
+              <div class="squareIcon">
+                <i class="fas fa-graduation-cap"></i>
+
+              </div>
+              <div class="squareContent">
+                <h2 class="counter">17</h2>
+                <h3>Kursów </h3>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-8">
+          <div class="squareItem">
+            <div class="squareInnerContainer">
+              <div class="squareIcon">
+                <i class="fas fa-pencil-ruler"></i>
+
+              </div>
+              <div class="squareContent">
+                <h2 class="counter">45</h2>
+                <h3>Warsztatów</h3>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-8">
+          <div class="squareItem">
+            <div class="squareInnerContainer">
+              <div class="squareIcon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <div class="squareContent">
+                <h2 class="counter">117</h2>
+                <h3>Szkoleń</h3>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        
+            </div>
+          </div>
+        </div>
+
+
+      <!---------------------------------------------------------------------------
+        Courses
+    ----------------------------------------------------------------------------->
+
+      <div id="courses" class="coursesSection section" data-aos="fade-up">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2>Galeria zdjęć</h2>
+              <div class="filter">
+                <ul id="filters">
+                  <!--Data filter is used to communicate with isotope-->
+                  <li><a href="#" data-filter="*" class="current" >Pokaż wszystkie </a></li>
+                  <li><a href="#" data-filter=".front"  >Szkolenia </a></li>
+                  <li><a href="#" data-filter=".back" >Warsztaty </a></li>
+                  <li><a href="#" data-filter=".full" > Prezentacje </a></li>
+                  <li><a href="#" data-filter=".none">Ukryj</a></li>
+                </ul>
+              </div>
+              <div class="itemsContainer">
+
+                <ul class="items courses">
+
+                  <li onclick="" class="front col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide1.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide1.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+                  <li onclick="" class="front col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide2.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide2.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+                  <li onclick="" class="back col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide3.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide3.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+                  <li onclick="" class="back col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide4.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide4.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+
+                  <li onclick="" class="full col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item">
+                      <img th:src="@{/assets/slide6.jpg}">
+                      <div class="icons">
+                        <a th:href="@{/assets/slide6.jpg}" title="" class="openButton"
+                           data-fancybox data-capture="">
+                          <i class="fa fa-search"></i>
+                        </a>
+                      </div>
+                      <div class="imageOverlay"></div>
+                    </div>
+
+                  </li>
+
+
+
+                </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+          <!-----------------------------------------------------------------------------
+          Contact
+        ----------------------------------------------------------------------------->
+  <div id="contact" class="section"  data-aos="zoom-in">
+    <div class="col-md-12 text-center">
+      <h2>Kontakt</h2>
+      <p>
+        obsługa klientów biznesowych <br>
+        tel. 22 111 21 34 <br>
+        kom. 112 233 445<br>
+        mail: biznes(at)efektywnyrozwoj.pl
+      </p>
+
+      <p>
+        pomoc techniczna <br>
+        tel. 23 113 23 34 <br>
+        kom. 112 233 443<br>
+        mail: pomoc(at)efektywnyrozwoj.pl
+      </p>
+
+      <p>Jeżeli masz pytania ogólne dotyczące oferty możesz też skorzystać z naszego formularza.</p>
+      <div class="container">
+        <a href="#demo" class="contactButton" data-toggle="collapse">Napisz do nas!</a>
+        <div id="demo" class="collapse">
+          <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xrgorzvq" method="post">
+            <fieldset id="fs-frm-inputs">
+              <input type="text" name="name" id="full-name" placeholder="Imię i nazwisko" required="">
+              <input type="email" name="_replyto" id="email-address" placeholder="Adres email" required="">
+              <textarea rows="5" name="message" id="message" class="textarea" placeholder="Napisz coś..." required=""></textarea>
+              <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            </fieldset>
+            <input type="submit" value="Wyślij">
+          </form>
+
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+    <!---------------------------------------------------------------------------
+  
+    Copyright
+
+  ------------------------------------------------------------------------------>
+  <div class="copyrightSection">
+    <div class="col-md-12 text-center">
+      <p>&copy; Copyright <a href="https://github.com/damianbregier" th:target="_blank" style="color: white; text-underline-offset: unset;">Damian Bregier</a> 2020</p>
+
+    </div>
+  </div>
+  </div>
+
+
+        
+
+        
+
+        
+
+        <!-----------------------------------------------------------------------------
+        JS links
+        ------------------------------------------------------------------------------->
+        <script th:src="@{/js/countUp.js}"></script>
+        <script th:src="@{/js/countUp-jquery.js}"></script>
+        <script th:src="@{/js/jquery.superslides.js}"></script>
+        <script th:src="@{/js/typed.js}"></script>
+        <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+        <script th:src="@{/js/isotope.pkgd.js}"></script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script th:src="@{/js/script.js}"></script>
+
+
+
+    </body>
+</html>
