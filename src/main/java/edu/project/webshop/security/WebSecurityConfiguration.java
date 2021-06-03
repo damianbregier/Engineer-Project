@@ -45,6 +45,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .antMatchers("/new_user").hasAuthority("ADMIN")
                     .antMatchers("/update_user").hasAuthority("ADMIN")
 
+                .antMatchers("/coursesView").hasAuthority("ADMIN")
+                .antMatchers("/new_course").hasAuthority("ADMIN")
+                .antMatchers("/update_course").hasAuthority("ADMIN")
+
 
                     .anyRequest().authenticated().and().csrf().disable()
                 .formLogin()
